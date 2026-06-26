@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jathagam · Jothishwaran — For Alliance</title>
+<meta name="description" content="Personal birth chart of Jothishwaran, shared openly for marriage alliance enquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- TOKENS (dark — default) ---------- */
+:root{
+  --bg:#0f0810;
+  --bg-2:#140b14;
+  --bg-3:#1a0f1a;
+  --bg-card:rgba(255,255,255,0.025);
+  --bg-card-hover:rgba(226,165,116,0.04);
+  --fg:#ffffff;
+  --fg-2:rgba(255,255,255,0.72);
+  --fg-3:rgba(255,255,255,0.48);
+  --fg-4:rgba(255,255,255,0.28);
+  --accent:#e2a574;
+  --accent-soft:#f5d4a8;
+  --accent-deep:#b87a4d;
+  --accent-glow:rgba(226,165,116,0.4);
+  --line:rgba(255,255,255,0.10);
+  --line-2:rgba(255,255,255,0.18);
+  --line-accent:rgba(226,165,116,0.35);
+  --moon-filter:sepia(0.45) saturate(0.75) hue-rotate(-12deg) brightness(0.92);
+  --shadow:0 12px 32px rgba(0,0,0,0.4);
+  --font-display:'Quicksand',system-ui,sans-serif;
+  --font-body:'Quicksand',system-ui,sans-serif;
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-tamil:'Noto Sans Tamil','Cormorant Garamond',serif;
+  --max:1280px;
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+[data-theme="light"]{
+  --bg:#f8efde;
+  --bg-2:#fff5e3;
+  --bg-3:#f0e3c8;
+  --bg-card:rgba(26,18,8,0.02);
+  --bg-card-hover:rgba(184,122,77,0.05);
+  --fg:#1a1208;
+  --fg-2:rgba(26,18,8,0.72);
+  --fg-3:rgba(26,18,8,0.50);
+  --fg-4:rgba(26,18,8,0.28);
+  --accent:#b87a4d;
+  --accent-soft:#d89968;
+  --accent-deep:#8b4d2a;
+  --accent-glow:rgba(184,122,77,0.35);
+  --line:rgba(26,18,8,0.10);
+  --line-2:rgba(26,18,8,0.18);
+  --line-accent:rgba(184,122,77,0.40);
+  --moon-filter:sepia(0.35) saturate(0.85) hue-rotate(-8deg) brightness(1);
+  --shadow:0 12px 32px rgba(26,18,8,0.12);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse at 50% -20%,rgba(120,60,80,0.18) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 100%,rgba(226,165,116,0.10) 0%,transparent 55%),
+    var(--bg);
+  color:var(--fg);
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  min-height:100vh;
+  transition:background 480ms var(--ease),color 480ms var(--ease);
+}
+[data-theme="light"] body{
+  background:
+    radial-gradient(ellipse at 50% -20%,rgba(184,122,77,0.10) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 100%,rgba(184,122,77,0.06) 0%,transparent 55%),
+    var(--bg);
+}
+html[data-lang="ta"] body :where(p,li,span,a,h1,h2,h3,h4,h5,dt,dd,label,button,em,strong,div){font-family:var(--font-tamil)}
+html[data-lang="ta"] body :where(.mono,.numeric,.email,.url,.phone){font-family:var(--font-body)!important}
+
+::selection{background:var(--accent);color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(226,165,116,0.3);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ---------- Stars / Aura ---------- */
+.stars,.stars-twinkle{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 20% 30%,#fff 50%,transparent 100%),
+    radial-gradient(1px 1px at 60% 70%,#fff 50%,transparent 100%),
+    radial-gradient(1px 1px at 50% 50%,#fff 50%,transparent 100%),
+    radial-gradient(2px 2px at 80% 20%,#fff 50%,transparent 100%),
+    radial-gradient(1px 1px at 30% 80%,rgba(255,255,255,0.7) 50%,transparent 100%),
+    radial-gradient(1px 1px at 90% 60%,#fff 50%,transparent 100%),
+    radial-gradient(1px 1px at 10% 50%,rgba(255,255,255,0.6) 50%,transparent 100%),
+    radial-gradient(2px 2px at 70% 90%,#fff 50%,transparent 100%),
+    radial-gradient(1px 1px at 40% 20%,rgba(255,255,255,0.8) 50%,transparent 100%),
+    radial-gradient(1px 1px at 95% 40%,rgba(255,255,255,0.5) 50%,transparent 100%),
+    radial-gradient(1px 1px at 15% 65%,rgba(255,255,255,0.6) 50%,transparent 100%),
+    radial-gradient(1px 1px at 55% 15%,#fff 50%,transparent 100%);
+  background-size:600px 600px,800px 800px,400px 400px,1000px 1000px,500px 500px,700px 700px,650px 650px,900px 900px,750px 750px,550px 550px,850px 850px,480px 480px;
+  background-repeat:repeat;
+  opacity:0.7;
+  transition:opacity 480ms var(--ease);
+}
+.stars-twinkle{
+  background:
+    radial-gradient(1px 1px at 25% 35%,#fff 50%,transparent 100%),
+    radial-gradient(2px 2px at 75% 65%,#fff 50%,transparent 100%),
+    radial-gradient(1px 1px at 45% 55%,#fff 50%,transparent 100%),
+    radial-gradient(1px 1px at 85% 25%,#fff 50%,transparent 100%);
+  background-size:300px 300px,400px 400px,250px 250px,500px 500px;
+  animation:twinkle 4s ease-in-out infinite alternate;
+}
+@keyframes twinkle{0%{opacity:0.2}100%{opacity:0.85}}
+
+[data-theme="light"] .stars,[data-theme="light"] .stars-twinkle{opacity:0}
+
+.aura-1{position:fixed;width:80vw;height:80vw;max-width:1200px;max-height:1200px;top:-40vw;right:-30vw;background:radial-gradient(circle,rgba(226,165,116,0.08) 0%,transparent 60%);filter:blur(40px);z-index:0;pointer-events:none}
+.aura-2{position:fixed;width:60vw;height:60vw;bottom:-30vw;left:-20vw;background:radial-gradient(circle,rgba(184,122,77,0.05) 0%,transparent 60%);filter:blur(40px);z-index:0;pointer-events:none}
+[data-theme="light"] .aura-1{background:radial-gradient(circle,rgba(226,165,116,0.18) 0%,transparent 60%)}
+[data-theme="light"] .aura-2{background:radial-gradient(circle,rgba(184,122,77,0.12) 0%,transparent 60%)}
+
+main,header,footer,section{position:relative;z-index:2}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:1.2rem var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+  transition:all 360ms var(--ease);
+  background:transparent;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  backdrop-filter:blur(20px) saturate(150%);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);
+  border-bottom:1px solid var(--line);
+  padding:0.8rem var(--gutter);
+}
+.logo{display:flex;align-items:center;gap:0.7rem;font-family:var(--font-display);font-weight:600;font-size:1.3rem;letter-spacing:0.04em;color:var(--accent);flex-shrink:0}
+.logo-mark{width:32px;height:32px;flex-shrink:0}
+.logo-mark svg{width:100%;height:100%;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.nav-links{display:flex;align-items:center;gap:2rem;flex:1;justify-content:center}
+.nav-links a{
+  font-family:var(--font-display);
+  font-size:0.86rem;font-weight:400;
+  color:var(--fg-2);
+  letter-spacing:0.04em;
+  transition:color 240ms var(--ease);
+  position:relative;
+}
+html[data-lang="ta"] .nav-links a{font-family:var(--font-tamil);font-size:0.92rem}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 320ms var(--ease)}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:0.7rem;flex-shrink:0}
+
+.toggle-pill,.toggle-icon{
+  display:inline-flex;align-items:center;
+  background:color-mix(in srgb,var(--bg) 60%,transparent);
+  border:1px solid var(--line-2);
+  border-radius:999px;
+  padding:3px;
+  backdrop-filter:blur(8px);
+}
+.toggle-pill button{
+  background:transparent;border:none;color:var(--fg-3);
+  padding:6px 12px;border-radius:999px;cursor:pointer;
+  font-family:var(--font-display);font-size:0.75rem;font-weight:600;
+  letter-spacing:0.1em;
+  transition:all 280ms var(--ease);
+  min-width:36px;text-align:center;
+}
+.toggle-pill button.tamil{font-family:var(--font-tamil);font-size:0.9rem;letter-spacing:0;font-weight:600}
+.toggle-pill button.active{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--accent-glow)}
+[data-theme="light"] .toggle-pill button.active{color:#fff}
+
+.toggle-icon{padding:0;width:38px;height:38px;justify-content:center;cursor:pointer;color:var(--fg-2);transition:all 280ms var(--ease)}
+.toggle-icon:hover{color:var(--accent);border-color:var(--line-accent)}
+.toggle-icon svg{width:16px;height:16px}
+.theme-icon-light{display:none}
+[data-theme="light"] .theme-icon-dark{display:none}
+[data-theme="light"] .theme-icon-light{display:block}
+
+.nav-cta{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.6rem 1.4rem;
+  border:1px solid var(--line-accent);
+  border-radius:999px;
+  font-family:var(--font-display);font-size:0.85rem;font-weight:500;
+  color:var(--fg);letter-spacing:0.04em;
+  transition:all 300ms var(--ease);
+  white-space:nowrap;
+}
+html[data-lang="ta"] .nav-cta{font-family:var(--font-tamil)}
+.nav-cta:hover{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 0 24px var(--accent-glow)}
+
+/* NAV — Take a Copy button + dropdown */
+.nav-share-wrap{position:relative}
+.nav-share-btn{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  padding:0.6rem 1.2rem;border-radius:999px;
+  background:var(--accent);color:#fff;
+  font-family:var(--font-display);font-size:0.84rem;font-weight:600;
+  letter-spacing:0.04em;cursor:pointer;
+  border:1px solid var(--accent);
+  box-shadow:0 0 18px var(--accent-glow);
+  transition:all 280ms var(--ease);
+  white-space:nowrap;
+  animation:sharePulse 3.5s ease-in-out infinite alternate;
+}
+html[data-lang="ta"] .nav-share-btn{font-family:var(--font-tamil);font-weight:700}
+@keyframes sharePulse{0%{box-shadow:0 0 16px rgba(226,165,116,0.35)}100%{box-shadow:0 0 28px rgba(226,165,116,0.55)}}
+.nav-share-btn:hover{background:var(--accent-soft);color:#fff;transform:translateY(-1px)}
+.nav-share-btn svg{width:14px;height:14px}
+.nav-share-menu{
+  position:absolute;top:calc(100% + 10px);right:0;
+  min-width:240px;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(24px) saturate(150%);
+  -webkit-backdrop-filter:blur(24px) saturate(150%);
+  border:1px solid var(--line-2);
+  border-radius:16px;
+  padding:0.5rem;
+  display:flex;flex-direction:column;gap:0.15rem;
+  box-shadow:0 24px 64px rgba(0,0,0,0.55);
+  z-index:60;
+  opacity:0;transform:translateY(-8px) scale(0.98);
+  transition:opacity 240ms var(--ease),transform 240ms var(--ease);
+  pointer-events:none;
+}
+.nav-share-menu.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.nav-share-item{
+  display:flex;align-items:center;gap:0.7rem;
+  padding:0.7rem 0.9rem;border-radius:10px;
+  font-family:var(--font-display);font-size:0.84rem;font-weight:500;
+  color:var(--fg);
+  background:transparent;border:none;cursor:pointer;text-align:left;width:100%;
+  transition:all 200ms var(--ease);
+  text-decoration:none;
+}
+html[data-lang="ta"] .nav-share-item{font-family:var(--font-tamil);font-weight:600}
+.nav-share-item:hover{background:var(--bg-card-hover);color:var(--accent)}
+.nav-share-item svg{width:16px;height:16px;color:var(--accent);flex-shrink:0}
+
+/* NAV — active link highlight */
+.nav-links a.active{color:var(--accent)}
+.nav-links a.active::after{transform:scaleX(1)}
+@media(max-width:1080px){.nav-links{display:none}}
+@media(max-width:760px){.nav-share-btn span{display:none}.nav-share-btn{padding:0.55rem 0.7rem}}
+@media(max-width:640px){.nav-cta{display:none}.nav{padding:1rem var(--gutter)}}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:7.5rem var(--gutter) 4rem;
+  position:relative;overflow:hidden;
+}
+.hero-grid{
+  max-width:760px;width:100%;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:2rem;position:relative;
+}
+.hero-text{display:flex;flex-direction:column;align-items:center}
+.hero-bio{margin-inline:auto}
+.hero-eyebrow,.hero-meta-row{justify-content:center}
+@media(max-width:880px){.hero-grid{gap:1.5rem}.hero-meta-row{justify-content:center}}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  font-family:var(--font-display);
+  font-size:0.78rem;font-weight:500;
+  color:var(--accent);
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  margin-bottom:1.4rem;
+}
+html[data-lang="ta"] .hero-eyebrow{font-family:var(--font-tamil);letter-spacing:0.06em;text-transform:none;font-size:0.95rem;font-weight:600}
+.hero-eyebrow::before,.hero-eyebrow::after{content:"";width:30px;height:1px;background:var(--accent)}
+@media(max-width:880px){.hero-eyebrow{justify-content:center}}
+.hero h1{
+  font-family:var(--font-serif);
+  font-weight:500;font-style:italic;
+  font-size:clamp(3.2rem,8vw,6rem);
+  line-height:1;letter-spacing:-0.01em;
+  color:var(--fg);
+  margin-bottom:1.2rem;
+}
+html[data-lang="ta"] .hero h1{font-family:var(--font-tamil);font-style:normal;font-weight:700}
+.hero h1 .accent{color:var(--accent);font-style:normal;font-weight:400}
+.hero-tamil{
+  font-family:var(--font-tamil);
+  font-size:clamp(1.4rem,3vw,2rem);
+  font-weight:500;
+  color:var(--accent-soft);
+  margin-bottom:1.8rem;
+  letter-spacing:0.01em;
+}
+[data-theme="light"] .hero-tamil{color:var(--accent-deep)}
+.hero-bio{
+  font-family:var(--font-display);
+  font-size:1.05rem;color:var(--fg-2);
+  font-weight:300;max-width:520px;line-height:1.8;
+  margin-bottom:2.4rem;
+  text-wrap:pretty;
+}
+html[data-lang="ta"] .hero-bio{font-family:var(--font-tamil);font-weight:400}
+@media(max-width:880px){.hero-bio{margin-inline:auto}}
+.hero-meta-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;margin:2rem 0 2.4rem;max-width:620px;
+  border:1.5px solid var(--line-accent);
+  border-radius:22px;
+  background:linear-gradient(180deg,rgba(226,165,116,0.10),rgba(226,165,116,0.03));
+  backdrop-filter:blur(8px);
+  overflow:hidden;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.35),
+    0 0 60px rgba(226,165,116,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  position:relative;
+  animation:heroStatGlow 6s ease-in-out infinite alternate;
+}
+@keyframes heroStatGlow{
+  0%{box-shadow:0 12px 40px rgba(0,0,0,0.32),0 0 48px rgba(226,165,116,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+  100%{box-shadow:0 12px 40px rgba(0,0,0,0.36),0 0 60px rgba(226,165,116,0.2),inset 0 1px 0 rgba(255,255,255,0.06)}
+}
+[data-theme="light"] .hero-meta-row{background:linear-gradient(180deg,rgba(184,122,77,0.10),rgba(184,122,77,0.03));border-color:var(--accent);box-shadow:0 12px 40px rgba(26,18,8,0.08),0 0 60px rgba(184,122,77,0.18)}
+.hero-stat{padding:1.6rem 0.9rem 1.4rem;text-align:center;border-right:1px solid rgba(226,165,116,0.3);position:relative;transition:background 360ms var(--ease)}
+.hero-stat:last-child{border-right:none}
+.hero-stat:hover{background:rgba(226,165,116,0.08)}
+.hero-stat::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:42px;height:3px;background:var(--accent);border-radius:0 0 6px 6px;box-shadow:0 0 14px var(--accent-glow)}
+.hero-stat-icon{display:block;font-family:var(--font-serif);color:var(--accent);font-size:1.2rem;margin-bottom:0.4rem;opacity:0.7;line-height:1}
+.hero-stat-k{
+  font-family:var(--font-display);
+  font-size:0.7rem;font-weight:600;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:0.6rem;
+  line-height:1.3;
+}
+html[data-lang="ta"] .hero-stat-k{font-family:var(--font-tamil);letter-spacing:0.02em;text-transform:none;font-weight:600;font-size:0.82rem}
+.hero-stat-v{
+  font-family:var(--font-serif);
+  font-weight:500;font-style:italic;
+  font-size:clamp(1.3rem,2.1vw,1.75rem);
+  color:var(--fg);line-height:1.15;
+  letter-spacing:-0.01em;
+  text-shadow:0 0 24px rgba(226,165,116,0.25);
+}
+[data-theme="light"] .hero-stat-v{text-shadow:none}
+html[data-lang="ta"] .hero-stat-v{font-family:var(--font-tamil);font-style:normal;font-weight:700;font-size:clamp(1.15rem,1.8vw,1.5rem)}
+.hero-stat-v.mono{font-family:var(--font-body);font-style:normal;font-weight:700;letter-spacing:0.01em;color:var(--accent-soft)}
+[data-theme="light"] .hero-stat-v.mono{color:var(--accent-deep)}
+html[data-lang="ta"] .hero-stat-v.mono{font-family:var(--font-body);font-weight:700}
+@media(max-width:880px){.hero-meta-row{margin-inline:auto}}
+@media(max-width:560px){.hero-meta-row{grid-template-columns:1fr;max-width:360px}.hero-stat{border-right:none;border-bottom:1px solid rgba(226,165,116,0.3);padding:1.2rem}.hero-stat:last-child{border-bottom:none}.hero-stat::before{top:auto;bottom:0;border-radius:6px 6px 0 0}}
+.hero-cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+@media(max-width:880px){.hero-cta-row{justify-content:center}}
+.btn{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  padding:0.95rem 2rem;border-radius:999px;
+  font-family:var(--font-display);font-size:0.92rem;font-weight:500;
+  letter-spacing:0.04em;
+  transition:all 320ms var(--ease);
+  cursor:pointer;border:1px solid transparent;
+}
+html[data-lang="ta"] .btn{font-family:var(--font-tamil);font-weight:600}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 rgba(226,165,116,0)}
+.btn-primary:hover{background:var(--accent-soft);box-shadow:0 0 32px var(--accent-glow);transform:translateY(-2px);color:#fff}
+[data-theme="light"] .btn-primary:hover{color:#fff}
+.btn-ghost{border-color:var(--line-2);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-arrow{transition:transform 300ms var(--ease)}
+.btn:hover .btn-arrow{transform:translateX(4px)}
+
+/* ARUNACHALA + LEO HERO ART */
+.hero-art-wrap{
+  position:relative;
+  display:flex;align-items:flex-end;justify-content:center;
+  aspect-ratio:1/1;
+  width:100%;max-width:560px;justify-self:end;
+  animation:artFloat 14s ease-in-out infinite alternate;
+}
+@keyframes artFloat{0%{transform:translateY(-8px)}100%{transform:translateY(8px)}}
+@media(max-width:880px){.hero-art-wrap{max-width:420px;justify-self:center;margin-bottom:2rem}}
+.hero-art-svg{position:relative;z-index:2;width:100%;height:100%;display:block;filter:drop-shadow(0 0 40px rgba(226,165,116,0.18))}
+.hero-art-aura{position:absolute;left:50%;top:35%;transform:translate(-50%,-50%);width:80%;height:60%;background:radial-gradient(ellipse at center,rgba(226,165,116,0.18) 0%,rgba(226,165,116,0.04) 40%,transparent 70%);filter:blur(40px);z-index:1;animation:pulse 6s ease-in-out infinite alternate;pointer-events:none}
+[data-theme="light"] .hero-art-aura{background:radial-gradient(ellipse at center,rgba(184,122,77,0.22) 0%,rgba(184,122,77,0.06) 40%,transparent 70%)}
+@keyframes pulse{0%{opacity:0.6}100%{opacity:1}}
+.leo-star.bright{animation:starPulse 3.2s ease-in-out infinite alternate}
+.leo-star.bright-2{animation:starPulse 4.1s ease-in-out infinite alternate}
+.leo-star.bright-3{animation:starPulse 2.7s ease-in-out infinite alternate}
+@keyframes starPulse{0%{opacity:0.7;filter:drop-shadow(0 0 2px var(--accent))}100%{opacity:1;filter:drop-shadow(0 0 8px var(--accent))}}
+.leo-line{stroke:var(--accent);stroke-width:0.6;opacity:0.35;fill:none;stroke-linecap:round}
+.leo-label{font-family:var(--font-display);font-size:6px;fill:var(--accent);opacity:0.7;letter-spacing:0.12em;text-transform:uppercase;font-weight:500}
+.constellation-label{font-family:var(--font-serif);font-style:italic;font-size:11px;fill:var(--accent);opacity:0.85;letter-spacing:0.1em}
+.place-label{font-family:var(--font-body);font-size:6.5px;fill:var(--accent);opacity:0.6;letter-spacing:0.3em;font-weight:500}
+.hill-silhouette{fill:#0a0a12;opacity:0.96}
+[data-theme="light"] .hill-silhouette{fill:#1a1208;opacity:0.88}
+.temple-silhouette{fill:#0a0a12;opacity:0.98}
+[data-theme="light"] .temple-silhouette{fill:#1a1208}
+/* Karthigai Deepam flame — flickers like a real flame */
+@keyframes deepamFlicker{
+  0%,100%{opacity:0.95;transform:scaleY(1) translateY(0)}
+  20%{opacity:0.85;transform:scaleY(1.06) translateY(-0.3px)}
+  40%{opacity:1;transform:scaleY(0.94) translateY(0.2px)}
+  60%{opacity:0.9;transform:scaleY(1.04) translateY(-0.2px)}
+  80%{opacity:0.98;transform:scaleY(0.98) translateY(0)}
+}
+@keyframes deepamGlow{
+  0%,100%{opacity:0.55;transform:scale(1)}
+  50%{opacity:0.85;transform:scale(1.15)}
+}
+.deepam-flame{transform-origin:200px 207px;animation:deepamFlicker 1.4s ease-in-out infinite}
+.deepam-halo{transform-origin:200px 200px;animation:deepamGlow 2.6s ease-in-out infinite}
+.deepam-rays{transform-origin:200px 195px;animation:deepamRays 3.4s ease-in-out infinite}
+@keyframes deepamRays{
+  0%,100%{opacity:0.45}
+  50%{opacity:0.75}
+}
+.tiny-star{fill:rgba(255,255,255,0.6)}
+[data-theme="light"] .tiny-star{fill:rgba(26,18,8,0.25)}
+
+/* ---------- SECTIONS ---------- */
+.section{padding:6rem var(--gutter);max-width:var(--max);margin:0 auto;position:relative}
+@media(max-width:720px){.section{padding:4rem var(--gutter)}}
+.section-head{text-align:center;margin-bottom:4rem;max-width:780px;margin-inline:auto}
+.eyebrow{
+  font-family:var(--font-display);
+  font-size:0.78rem;font-weight:500;
+  color:var(--accent);
+  letter-spacing:0.3em;text-transform:uppercase;
+  margin-bottom:1.2rem;display:inline-block;
+}
+html[data-lang="ta"] .eyebrow{font-family:var(--font-tamil);letter-spacing:0.06em;text-transform:none;font-weight:600;font-size:0.95rem}
+.section-title{
+  font-family:var(--font-serif);font-weight:500;
+  font-size:clamp(2.4rem,5.5vw,4rem);
+  line-height:1.05;letter-spacing:-0.01em;
+  color:var(--fg);margin-bottom:1.2rem;
+  text-wrap:balance;
+}
+html[data-lang="ta"] .section-title{font-family:var(--font-tamil);font-weight:700}
+.section-title em{font-style:italic;color:var(--accent)}
+html[data-lang="ta"] .section-title em{font-style:normal;font-weight:700}
+.section-sub{
+  font-family:var(--font-display);
+  font-size:1.02rem;font-weight:300;
+  color:var(--fg-2);line-height:1.8;
+  max-width:580px;margin:0 auto;
+  text-wrap:pretty;
+}
+html[data-lang="ta"] .section-sub{font-family:var(--font-tamil);font-weight:400}
+
+/* ── ORNAMENTAL TEMPLE DIVIDER ── */
+.om-divider{display:flex;align-items:center;justify-content:center;gap:clamp(0.9rem,3vw,1.8rem);max-width:var(--max);margin:0 auto;padding:1.5rem var(--gutter)}
+.om-divider .l{height:1px;flex:1;max-width:240px;background:linear-gradient(90deg,transparent,var(--line-accent) 55%,transparent)}
+.om-divider .orn{width:34px;height:34px;color:var(--accent);flex-shrink:0;opacity:0.92;filter:drop-shadow(0 0 10px var(--accent-glow))}
+.om-divider .orn .pet{opacity:0.85}
+.om-divider .orn .ring{opacity:0.4}
+@media(max-width:560px){.om-divider .l{max-width:90px}}
+
+/* BIRTH DETAILS */
+.details-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);
+}
+.detail{
+  padding:2rem 1.8rem;
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  transition:all 300ms var(--ease);background:transparent;
+}
+.detail:hover{background:var(--bg-card-hover)}
+.detail .k{
+  font-family:var(--font-display);
+  font-size:0.72rem;font-weight:500;
+  color:var(--fg-3);
+  letter-spacing:0.18em;text-transform:uppercase;
+  margin-bottom:0.7rem;
+  display:flex;align-items:center;gap:0.6rem;
+}
+html[data-lang="ta"] .detail .k{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none;font-weight:600;font-size:0.85rem;color:var(--accent)}
+.detail .k::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent)}
+.detail .v{font-family:var(--font-serif);font-size:1.45rem;color:var(--fg);font-weight:500;line-height:1.3}
+html[data-lang="ta"] .detail .v{font-family:var(--font-tamil);font-weight:600}
+.detail .v.italic{font-style:italic}
+html[data-lang="ta"] .detail .v.italic{font-style:normal}
+.detail .v.accent{color:var(--accent)}
+.detail .v-sub{font-family:var(--font-display);font-size:0.85rem;color:var(--fg-3);margin-top:0.3rem;font-style:italic}
+html[data-lang="ta"] .detail .v-sub{font-family:var(--font-tamil);font-style:normal}
+.detail .v-tamil{font-family:var(--font-tamil);font-size:1rem;color:var(--accent-soft);margin-top:0.3rem;font-weight:500}
+[data-theme="light"] .detail .v-tamil{color:var(--accent-deep)}
+html[data-lang="ta"] .detail .v-tamil{display:none}
+
+/* CORE SIGNS */
+.signs-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem}
+.sign-feature{
+  position:relative;padding:3rem 2rem 2.4rem;text-align:center;
+  border:1px solid var(--line-2);border-radius:24px;
+  background:linear-gradient(180deg,var(--bg-card),transparent);
+  overflow:hidden;transition:all 400ms var(--ease);
+}
+.sign-feature::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(226,165,116,0.18),transparent 60%);opacity:0;transition:opacity 400ms var(--ease)}
+.sign-feature:hover{border-color:var(--line-accent);transform:translateY(-6px);box-shadow:var(--shadow)}
+.sign-feature:hover::before{opacity:1}
+.sign-feature > *{position:relative;z-index:2}
+.sign-feature .role{font-family:var(--font-display);font-size:0.72rem;font-weight:500;color:var(--accent);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:1.6rem}
+html[data-lang="ta"] .sign-feature .role{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none;font-weight:600;font-size:0.9rem}
+.sign-icon{width:120px;height:120px;margin:0 auto 1.6rem;display:flex;align-items:center;justify-content:center;position:relative}
+.sign-icon .blot{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(226,165,116,0.10) 0%,rgba(226,165,116,0.03) 40%,transparent 70%);filter:blur(8px)}
+[data-theme="light"] .sign-icon .blot{background:radial-gradient(circle at 50% 50%,rgba(184,122,77,0.15) 0%,rgba(184,122,77,0.04) 40%,transparent 70%)}
+.sign-icon .glyph{position:relative;font-family:var(--font-serif);font-size:5rem;color:var(--fg);text-shadow:0 0 24px rgba(226,165,116,0.4);font-weight:400}
+.sign-feature h3{font-family:var(--font-serif);font-weight:500;font-size:2rem;color:var(--fg);margin-bottom:0.3rem}
+html[data-lang="ta"] .sign-feature h3{font-family:var(--font-tamil);font-weight:700}
+.sign-tamil{font-family:var(--font-tamil);font-weight:600;font-size:1.3rem;color:var(--accent);margin-bottom:1.2rem}
+html[data-lang="ta"] .sign-tamil{display:none}
+.sign-meaning{font-family:var(--font-display);font-size:0.95rem;font-weight:300;color:var(--fg-2);line-height:1.7;max-width:240px;margin:0 auto}
+html[data-lang="ta"] .sign-meaning{font-family:var(--font-tamil);font-weight:400}
+
+/* PANCHANGAM */
+.panchang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem}
+.panchang-card{padding:2rem 1.8rem;border:1px solid var(--line);border-radius:20px;background:var(--bg-card);transition:all 300ms var(--ease)}
+.panchang-card:hover{border-color:var(--line-accent);background:var(--bg-card-hover)}
+.panchang-card .icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,rgba(226,165,116,0.18),rgba(226,165,116,0.04));border:1px solid var(--line-accent);display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:1.4rem}
+.panchang-card h4{font-family:var(--font-serif);font-weight:500;font-size:1.45rem;color:var(--fg);margin-bottom:0.4rem}
+html[data-lang="ta"] .panchang-card h4{font-family:var(--font-tamil);font-weight:700}
+.panchang-card .lead{font-family:var(--font-display);font-size:0.82rem;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem}
+html[data-lang="ta"] .panchang-card .lead{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none;font-weight:600;font-size:0.92rem}
+.panchang-card dl{display:grid;gap:0.7rem}
+.panchang-card .row{display:flex;justify-content:space-between;gap:1rem;padding:0.5rem 0;border-bottom:1px solid var(--line)}
+.panchang-card .row:last-child{border-bottom:none}
+.panchang-card .row dt{font-family:var(--font-display);font-size:0.82rem;color:var(--fg-3);font-weight:400}
+.panchang-card .row dd{font-family:var(--font-display);font-size:0.92rem;color:var(--fg);font-weight:500;text-align:right}
+html[data-lang="ta"] .panchang-card .row dt,html[data-lang="ta"] .panchang-card .row dd{font-family:var(--font-tamil)}
+.panchang-card .row dd .em{color:var(--accent)}
+
+/* DASA + ERAS */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:880px){.split{grid-template-columns:1fr}}
+.dasa-card,.era-card{padding:2.4rem 2rem;border:1px solid var(--line);border-radius:24px;background:var(--bg-card)}
+.dasa-card{position:relative;overflow:hidden}
+.dasa-card::after{content:"";position:absolute;top:-50%;right:-30%;width:300px;height:300px;background:radial-gradient(circle,rgba(226,165,116,0.18),transparent 70%);filter:blur(40px);pointer-events:none}
+.dasa-card .label,.era-card .label{font-family:var(--font-display);font-size:0.78rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem}
+html[data-lang="ta"] .dasa-card .label,html[data-lang="ta"] .era-card .label{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none;font-weight:600;font-size:0.92rem}
+.dasa-card .planet{font-family:var(--font-serif);font-weight:500;font-style:italic;font-size:clamp(2.4rem,4vw,3.4rem);color:var(--fg);line-height:1;margin-bottom:0.4rem}
+html[data-lang="ta"] .dasa-card .planet{font-family:var(--font-tamil);font-style:normal;font-weight:700}
+.dasa-card .planet .em{color:var(--accent);font-style:normal;font-weight:400}
+.dasa-card .planet-tamil{font-family:var(--font-tamil);font-size:1.1rem;color:var(--accent-soft);margin-bottom:2rem}
+[data-theme="light"] .dasa-card .planet-tamil{color:var(--accent-deep)}
+html[data-lang="ta"] .dasa-card .planet-tamil{display:none}
+.dasa-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:0.7rem;margin-top:1.5rem;position:relative;z-index:2}
+.dasa-num{text-align:center;padding:1.2rem 0.5rem;border:1px solid var(--line-2);border-radius:12px;background:color-mix(in srgb,var(--bg) 70%,transparent)}
+.dasa-num .n{font-family:var(--font-serif);font-weight:500;font-size:2rem;color:var(--accent);line-height:1}
+.dasa-num .u{font-family:var(--font-display);font-size:0.66rem;color:var(--fg-3);letter-spacing:0.16em;text-transform:uppercase;margin-top:0.5rem}
+html[data-lang="ta"] .dasa-num .u{font-family:var(--font-tamil);letter-spacing:0.02em;text-transform:none;font-size:0.78rem}
+.era-card h3{font-family:var(--font-serif);font-weight:500;font-style:italic;font-size:clamp(2rem,3.5vw,2.8rem);color:var(--fg);margin-bottom:0.4rem;line-height:1.1}
+html[data-lang="ta"] .era-card h3{font-family:var(--font-tamil);font-style:normal;font-weight:700}
+.era-card .sub{font-family:var(--font-display);font-size:0.95rem;color:var(--fg-3);margin-bottom:1.8rem}
+html[data-lang="ta"] .era-card .sub{font-family:var(--font-tamil)}
+.era-list .row{display:flex;justify-content:space-between;align-items:center;padding:0.85rem 0;border-bottom:1px solid var(--line)}
+.era-list .row:last-child{border-bottom:none}
+.era-list .row .l{font-family:var(--font-display);font-size:0.9rem;color:var(--fg-3);font-weight:400}
+.era-list .row .r{font-family:var(--font-serif);font-size:1.15rem;color:var(--fg);font-weight:500}
+html[data-lang="ta"] .era-list .row .l,html[data-lang="ta"] .era-list .row .r{font-family:var(--font-tamil)}
+.era-list .row .r.em{color:var(--accent)}
+
+/* SINGLE RASI (replaces 12-rasi wall) */
+.single-rasi-wrap{display:flex;justify-content:center}
+.single-rasi{
+  position:relative;
+  width:100%;max-width:520px;
+  padding:3.5rem 2.4rem 2.8rem;
+  text-align:center;
+  border:1px solid var(--line-accent);
+  border-radius:32px;
+  background:linear-gradient(180deg,var(--bg-card),transparent);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.single-rasi::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(226,165,116,0.18),transparent 60%);pointer-events:none}
+.single-rasi::after{content:"";position:absolute;left:50%;top:50%;width:340px;height:340px;background:radial-gradient(circle,rgba(226,165,116,0.12),transparent 70%);filter:blur(40px);transform:translate(-50%,-50%);pointer-events:none}
+.single-rasi > *{position:relative;z-index:2}
+.rasi-corner{position:absolute;color:var(--accent);font-size:0.9rem;opacity:0.55;z-index:1}
+.rasi-corner.top-left{top:1.2rem;left:1.4rem}
+.rasi-corner.top-right{top:1.2rem;right:1.4rem}
+.rasi-corner.bottom-left{bottom:1.2rem;left:1.4rem}
+.rasi-corner.bottom-right{bottom:1.2rem;right:1.4rem}
+.rasi-badge{
+  display:inline-block;
+  font-family:var(--font-display);font-size:0.7rem;font-weight:600;
+  letter-spacing:0.22em;text-transform:uppercase;color:#fff;
+  background:var(--accent);padding:5px 14px;border-radius:999px;
+  margin-bottom:1.6rem;box-shadow:0 0 18px var(--accent-glow);
+}
+html[data-lang="ta"] .rasi-badge{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none;font-size:0.85rem;font-weight:700}
+.rasi-glyph-wrap{width:180px;height:180px;margin:0 auto 1.4rem;display:flex;align-items:center;justify-content:center;position:relative}
+.rasi-blot{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(226,165,116,0.22) 0%,rgba(226,165,116,0.05) 50%,transparent 75%);filter:blur(10px);border-radius:50%}
+[data-theme="light"] .rasi-blot{background:radial-gradient(circle at 50% 50%,rgba(184,122,77,0.28) 0%,rgba(184,122,77,0.06) 50%,transparent 75%)}
+.rasi-glyph{position:relative;font-family:var(--font-serif);font-size:8rem;color:var(--accent);text-shadow:0 0 40px var(--accent-glow);font-weight:400;line-height:1}
+.rasi-name{font-family:var(--font-serif);font-weight:500;font-style:italic;font-size:clamp(2.4rem,5vw,3.4rem);color:var(--fg);line-height:1;margin-bottom:0.5rem}
+html[data-lang="ta"] .rasi-name{font-family:var(--font-tamil);font-style:normal;font-weight:700}
+.rasi-name-en{font-family:var(--font-tamil);font-size:1.05rem;color:var(--accent-soft);margin-bottom:2rem;font-weight:500}
+[data-theme="light"] .rasi-name-en{color:var(--accent-deep)}
+html[data-lang="ta"] .rasi-name-en{display:none}
+.rasi-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;margin-top:0.5rem}
+@media(max-width:480px){.rasi-stats{grid-template-columns:1fr}}
+.rasi-stat{padding:1rem 0.8rem;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--bg) 70%,transparent);text-align:center}
+.rasi-stat-k{font-family:var(--font-display);font-size:0.66rem;color:var(--fg-3);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.3rem}
+html[data-lang="ta"] .rasi-stat-k{font-family:var(--font-tamil);letter-spacing:0.02em;text-transform:none;font-size:0.82rem;font-weight:600}
+.rasi-stat-v{font-family:var(--font-serif);font-size:1.1rem;color:var(--fg);font-weight:500}
+html[data-lang="ta"] .rasi-stat-v{font-family:var(--font-tamil);font-weight:600}
+
+/* ── TRADITIONAL SOUTH-INDIAN RASI KATTAM ── */
+.rasi-layout{display:grid;grid-template-columns:1.05fr 0.95fr;gap:2.6rem;align-items:center;max-width:1080px;margin:0 auto}
+@media(max-width:920px){.rasi-layout{grid-template-columns:1fr;gap:2.4rem}}
+.kattam-wrap{position:relative}
+.kattam-caption{font-family:var(--font-display);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--fg-3);text-align:center;margin-bottom:1.1rem}
+html[data-lang="ta"] .kattam-caption{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none;font-size:0.9rem;font-weight:600}
+.kattam{
+  width:100%;max-width:480px;margin:0 auto;
+  aspect-ratio:1/1;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(4,1fr);
+  background:
+    linear-gradient(180deg,rgba(226,165,116,0.06),transparent),
+    color-mix(in srgb,var(--bg) 80%,transparent);
+  border:2px solid var(--accent);
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,0.4),0 0 70px rgba(226,165,116,0.12),inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+[data-theme="light"] .kattam{box-shadow:0 18px 50px rgba(26,18,8,0.12),0 0 50px rgba(184,122,77,0.14)}
+.kattam-cell{
+  border:1px solid var(--line);
+  padding:0.55rem 0.5rem 0.4rem;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-start;gap:0.25rem;
+  min-width:0;
+  transition:background 320ms var(--ease);
+}
+.kattam-cell:hover{background:var(--bg-card-hover)}
+.kattam-cell .gly{position:absolute;right:5px;bottom:1px;font-family:var(--font-serif);font-size:2rem;line-height:1;color:var(--fg);opacity:0.08;pointer-events:none;z-index:1}
+.kattam-cell .rn{font-family:var(--font-tamil);font-size:0.82rem;font-weight:600;color:var(--fg-2);line-height:1.15;position:relative;z-index:2}
+.kattam-cell .re{font-family:var(--font-display);font-size:0.54rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--fg-4);position:relative;z-index:2}
+html[data-lang="ta"] .kattam-cell .re{display:none}
+.kattam-cell .pin{
+  display:inline-flex;align-items:center;gap:3px;align-self:flex-start;
+  font-family:var(--font-display);font-size:0.6rem;font-weight:700;letter-spacing:0.04em;
+  color:#fff;background:var(--accent);padding:2px 7px;border-radius:999px;
+  position:relative;z-index:2;margin-top:auto;
+  box-shadow:0 0 12px var(--accent-glow);
+}
+html[data-lang="ta"] .kattam-cell .pin{font-family:var(--font-tamil);font-weight:700;font-size:0.66rem}
+.kattam-cell .pin.moon{background:var(--accent-deep)}
+.kattam-cell.occ{background:rgba(226,165,116,0.10)}
+.kattam-cell.occ .rn{color:var(--accent-soft)}
+[data-theme="light"] .kattam-cell.occ .rn{color:var(--accent-deep)}
+.kattam-cell.lagna{box-shadow:inset 0 0 0 2px var(--accent)}
+.kattam-center{
+  grid-column:2 / 4;grid-row:2 / 4;
+  border:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.3rem;
+  background:radial-gradient(circle at 50% 45%,rgba(226,165,116,0.16),transparent 72%);
+  position:relative;
+}
+.kattam-center .om{font-family:var(--font-tamil);font-size:1.7rem;color:var(--accent);line-height:1;text-shadow:0 0 22px var(--accent-glow)}
+.kattam-center .ttl{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;color:var(--fg);line-height:1.1}
+html[data-lang="ta"] .kattam-center .ttl{font-family:var(--font-tamil);font-style:normal;font-weight:700}
+.kattam-center .sttl{font-family:var(--font-display);font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--fg-3)}
+html[data-lang="ta"] .kattam-center .sttl{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none;font-size:0.72rem;font-weight:600}
+.kattam-legend{display:flex;flex-wrap:wrap;gap:0.6rem 1.4rem;justify-content:center;margin-top:1.4rem}
+.kattam-legend .li{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-display);font-size:0.78rem;color:var(--fg-3)}
+html[data-lang="ta"] .kattam-legend .li{font-family:var(--font-tamil);font-weight:500}
+.kattam-legend .dot{width:11px;height:11px;border-radius:999px;background:var(--accent);box-shadow:0 0 8px var(--accent-glow)}
+.kattam-legend .dot.moon{background:var(--accent-deep)}
+
+/* THREE-CHART GRID */
+.charts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.6rem 2.8rem;max-width:1040px;margin:0 auto}
+@media(max-width:860px){.charts-grid{grid-template-columns:1fr;gap:3rem;max-width:480px}}
+.chart-block .kattam-cell{justify-content:flex-start;gap:0.25rem;padding:0.5rem 0.45rem 0.45rem}
+.chart-block .kattam-cell .rn{font-size:0.7rem}
+.chart-block .kattam-cell .re{font-size:0.5rem}
+.kattam-cell .planets{display:flex;flex-wrap:wrap;gap:3px;position:relative;z-index:2;margin-top:auto;padding-top:3px}
+.pl{
+  display:inline-flex;align-items:center;
+  font-family:var(--font-display);font-size:0.58rem;font-weight:700;letter-spacing:0.01em;
+  color:var(--accent-soft);background:rgba(226,165,116,0.16);
+  border:1px solid var(--line-accent);
+  padding:1px 5px;border-radius:6px;line-height:1.35;white-space:nowrap;
+}
+html[data-lang="ta"] .pl{font-family:var(--font-tamil);font-weight:700;font-size:0.62rem}
+[data-theme="light"] .pl{color:var(--accent-deep)}
+.pl.lagnam{color:#fff;background:var(--accent);border-color:transparent;box-shadow:0 0 10px var(--accent-glow)}
+.pl.moon{color:#fff;background:var(--accent-deep);border-color:transparent}
+.kattam-cell.has-lagnam{box-shadow:inset 0 0 0 2px var(--accent)}
+.kattam-cell.has-planet{background:rgba(226,165,116,0.07)}
+.chart-foot{font-family:var(--font-display);font-size:0.74rem;color:var(--fg-4);text-align:center;margin-top:0.85rem;line-height:1.6}
+html[data-lang="ta"] .chart-foot{font-family:var(--font-tamil)}
+.planet-key{display:flex;flex-wrap:wrap;gap:0.55rem 0.75rem;justify-content:center;max-width:780px;margin:2.2rem auto 0}
+.planet-key .pk{display:inline-flex;align-items:center;gap:0.42rem;font-family:var(--font-display);font-size:0.78rem;color:var(--fg-3)}
+html[data-lang="ta"] .planet-key .pk{font-family:var(--font-tamil)}
+.planet-key .pk b{font-family:var(--font-display);font-weight:700;color:var(--accent-soft);background:rgba(226,165,116,0.16);border:1px solid var(--line-accent);border-radius:5px;padding:0 5px;font-size:0.66rem}
+[data-theme="light"] .planet-key .pk b{color:var(--accent-deep)}
+
+/* ZODIAC WALL (legacy — kept for safety, not used) */
+.zodiac-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem 0.8rem}
+@media(max-width:1000px){.zodiac-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:640px){.zodiac-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:400px){.zodiac-grid{grid-template-columns:repeat(2,1fr)}}
+.zod{text-align:center;padding:1.2rem 0.5rem;border-radius:16px;transition:all 320ms var(--ease);cursor:default;position:relative}
+.zod .blot{width:120px;height:120px;margin:0 auto 0.9rem;position:relative;display:flex;align-items:center;justify-content:center}
+.zod .blot::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0.02) 50%,transparent 75%);filter:blur(6px);border-radius:50%;transition:all 380ms var(--ease)}
+[data-theme="light"] .zod .blot::before{background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(184,122,77,0.10) 0%,rgba(184,122,77,0.03) 50%,transparent 75%)}
+.zod .glyph{position:relative;font-family:var(--font-serif);font-size:3.6rem;color:var(--fg);font-weight:400;transition:all 320ms var(--ease)}
+.zod .name{font-family:var(--font-serif);font-weight:600;font-size:1.2rem;color:var(--fg);margin-bottom:0.2rem}
+html[data-lang="ta"] .zod .name{font-family:var(--font-tamil);font-weight:700}
+.zod .range{font-family:var(--font-display);font-size:0.78rem;color:var(--fg-3);letter-spacing:0.04em}
+html[data-lang="ta"] .zod .range{font-family:var(--font-tamil)}
+.zod:hover .blot::before{background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(226,165,116,0.22) 0%,rgba(226,165,116,0.04) 50%,transparent 75%)}
+.zod:hover .glyph{color:var(--accent);text-shadow:0 0 24px var(--accent-glow);transform:scale(1.08)}
+.zod.active .blot::before{background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(226,165,116,0.3) 0%,rgba(226,165,116,0.08) 50%,transparent 75%)}
+.zod.active .glyph{color:var(--accent);text-shadow:0 0 32px var(--accent-glow)}
+.zod.active .name{color:var(--accent)}
+.zod.active::after{content:attr(data-badge);position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-family:var(--font-display);font-size:0.62rem;font-weight:600;letter-spacing:0.18em;color:#fff;background:var(--accent);padding:3px 10px;border-radius:999px;white-space:nowrap;text-transform:uppercase}
+html[data-lang="ta"] .zod.active::after{font-family:var(--font-tamil);letter-spacing:0.04em;text-transform:none}
+
+/* SHLOKA */
+.shloka-section{max-width:880px;margin:4rem auto 0;padding:5rem var(--gutter);text-align:center;position:relative}
+.shloka-section::before,.shloka-section::after{content:"✦";position:absolute;left:50%;transform:translateX(-50%);color:var(--accent);font-size:1.4rem}
+.shloka-section::before{top:1.5rem}.shloka-section::after{bottom:1.5rem}
+.shloka{font-family:var(--font-tamil);font-size:clamp(1.1rem,2.4vw,1.55rem);line-height:2;font-weight:500;color:var(--accent-soft);margin-bottom:1.8rem}
+[data-theme="light"] .shloka{color:var(--accent-deep)}
+.shloka-meaning{font-family:var(--font-serif);font-style:italic;font-size:1.05rem;color:var(--fg-2);max-width:560px;margin:0 auto;line-height:1.7}
+html[data-lang="ta"] .shloka-meaning{font-family:var(--font-tamil);font-style:normal}
+
+/* SHARE / DOWNLOAD */
+.share{
+  max-width:var(--max);margin:0 auto;padding:6rem var(--gutter);
+}
+.share-card{
+  padding:3.5rem 2rem;border:1px solid var(--line-2);border-radius:28px;
+  background:linear-gradient(180deg,var(--bg-card),transparent);
+  text-align:center;position:relative;overflow:hidden;
+}
+.share-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(226,165,116,0.12),transparent 60%);pointer-events:none}
+.share-card > *{position:relative;z-index:2}
+.share-buttons{display:flex;flex-wrap:wrap;gap:0.9rem;justify-content:center;margin-top:2.4rem}
+.share-btn{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  padding:0.95rem 1.7rem;border-radius:999px;
+  font-family:var(--font-display);font-size:0.9rem;font-weight:500;
+  letter-spacing:0.04em;cursor:pointer;
+  border:1px solid var(--line-2);
+  background:color-mix(in srgb,var(--bg) 60%,transparent);
+  color:var(--fg);
+  transition:all 300ms var(--ease);
+  backdrop-filter:blur(8px);
+}
+html[data-lang="ta"] .share-btn{font-family:var(--font-tamil);font-weight:600}
+.share-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.25),0 0 24px var(--accent-glow)}
+.share-btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.share-btn.primary:hover{background:var(--accent-soft);color:#fff;border-color:var(--accent-soft)}
+.share-btn svg{width:16px;height:16px}
+.share-link-row{
+  margin-top:2rem;display:inline-flex;align-items:center;gap:0.7rem;
+  padding:0.6rem 0.6rem 0.6rem 1.2rem;
+  border:1px solid var(--line);border-radius:999px;
+  font-family:var(--font-display);font-size:0.85rem;color:var(--fg-3);
+  background:var(--bg-card);
+  max-width:100%;
+}
+.share-link-row .url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:300px}
+.copy-btn{padding:0.5rem 1rem;border-radius:999px;background:var(--accent);color:#fff;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;border:none;cursor:pointer;transition:all 240ms var(--ease)}
+.copy-btn:hover{background:var(--accent-soft)}
+.copy-btn.copied{background:#5ac892}
+@media(max-width:520px){.share-link-row{flex-direction:column;align-items:stretch;border-radius:16px;padding:0.8rem}.share-link-row .url{max-width:none;text-align:center}}
+
+/* CONTACT */
+.contact{position:relative;padding:7rem var(--gutter) 4rem;overflow:hidden;isolation:isolate}
+.contact-moon{
+  position:absolute;left:50%;top:30%;width:160vmin;height:160vmin;
+  transform:translate(-50%,-50%);z-index:0;opacity:0.45;
+  pointer-events:none;
+  mask-image:radial-gradient(circle,#000 40%,transparent 70%);
+  -webkit-mask-image:radial-gradient(circle,#000 40%,transparent 70%);
+  transition:opacity 480ms var(--ease);
+}
+[data-theme="light"] .contact-moon{opacity:0.18}
+.contact-inner{max-width:var(--max);margin:0 auto;position:relative;z-index:2}
+.contact h2{font-family:var(--font-serif);font-weight:500;font-style:italic;font-size:clamp(2.4rem,5.5vw,4rem);margin-bottom:0.6rem;line-height:1.05;color:var(--fg)}
+html[data-lang="ta"] .contact h2{font-family:var(--font-tamil);font-style:normal;font-weight:700}
+.contact .sub{font-family:var(--font-display);color:var(--fg-2);font-weight:300;font-size:1.05rem;margin-bottom:3rem;max-width:520px}
+html[data-lang="ta"] .contact .sub{font-family:var(--font-tamil);font-weight:400}
+.contact-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.contact-card{
+  display:flex;align-items:center;gap:1rem;padding:1.4rem 1.6rem;
+  border:1px solid var(--line-2);border-radius:18px;
+  background:color-mix(in srgb,var(--bg) 70%,transparent);
+  backdrop-filter:blur(8px);transition:all 320ms var(--ease);color:var(--fg);
+}
+.contact-card:hover{border-color:var(--accent);transform:translateY(-3px);background:color-mix(in srgb,var(--bg) 85%,transparent);box-shadow:var(--shadow)}
+.contact-card .ic{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,rgba(226,165,116,0.2),rgba(226,165,116,0.05));border:1px solid var(--line-accent);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.contact-card .ic svg{width:18px;height:18px}
+.contact-card .label{font-family:var(--font-display);font-size:0.72rem;color:var(--fg-3);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.2rem}
+html[data-lang="ta"] .contact-card .label{font-family:var(--font-tamil);letter-spacing:0.02em;text-transform:none;font-weight:600;font-size:0.85rem}
+.contact-card .val{font-family:var(--font-serif);font-size:1.05rem;color:var(--fg);font-weight:500;word-break:break-word}
+.contact-card .val.mono{font-family:var(--font-body);font-size:0.95rem;letter-spacing:0.02em}
+.contact-card:hover .val{color:var(--accent)}
+
+/* FOOTER */
+footer{position:relative;z-index:2;padding:3rem var(--gutter) 2.5rem;border-top:1px solid var(--line);text-align:center}
+.foot-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center}
+@media(max-width:880px){.foot-grid{grid-template-columns:1fr;text-align:center}}
+.foot-left{font-family:var(--font-tamil);font-size:1.4rem;font-weight:700;color:var(--accent);letter-spacing:0.04em}
+.foot-middle{display:flex;align-items:center;gap:0.7rem;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:1.15rem;color:var(--accent);letter-spacing:0.04em}
+.foot-middle .mark{width:28px;height:28px}
+.foot-right{display:flex;gap:0.8rem;justify-content:flex-end;align-items:center}
+@media(max-width:880px){.foot-right{justify-content:center}}
+.soc{width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--fg-2);transition:all 280ms var(--ease)}
+.soc:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 0 18px var(--accent-glow)}
+.soc svg{width:16px;height:16px}
+.foot-bottom{margin-top:2.5rem;padding-top:1.6rem;border-top:1px solid var(--line);font-family:var(--font-display);font-size:0.78rem;color:var(--fg-3);letter-spacing:0.16em;text-transform:uppercase}
+html[data-lang="ta"] .foot-bottom{font-family:var(--font-tamil);letter-spacing:0.02em;text-transform:none}
+.foot-quote{font-family:var(--font-serif);font-style:italic;font-size:1rem;color:var(--fg-2);max-width:480px;margin:1.4rem auto 0;line-height:1.7;text-transform:none;letter-spacing:0}
+html[data-lang="ta"] .foot-quote{font-family:var(--font-tamil);font-style:normal}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 800ms var(--ease),transform 800ms var(--ease)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-stagger > *{opacity:0;transform:translateY(20px);transition:opacity 700ms var(--ease),transform 700ms var(--ease)}
+.reveal-stagger.in > *{opacity:1;transform:translateY(0)}
+.reveal-stagger.in > *:nth-child(1){transition-delay:60ms}
+.reveal-stagger.in > *:nth-child(2){transition-delay:120ms}
+.reveal-stagger.in > *:nth-child(3){transition-delay:180ms}
+.reveal-stagger.in > *:nth-child(4){transition-delay:240ms}
+.reveal-stagger.in > *:nth-child(5){transition-delay:300ms}
+.reveal-stagger.in > *:nth-child(6){transition-delay:360ms}
+.reveal-stagger.in > *:nth-child(7){transition-delay:420ms}
+.reveal-stagger.in > *:nth-child(8){transition-delay:480ms}
+.reveal-stagger.in > *:nth-child(9){transition-delay:540ms}
+.reveal-stagger.in > *:nth-child(10){transition-delay:600ms}
+.reveal-stagger.in > *:nth-child(11){transition-delay:660ms}
+.reveal-stagger.in > *:nth-child(12){transition-delay:720ms}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+/* ---------- PRINT ---------- */
+@media print{
+  html,body{background:#fff!important;color:#1a1208!important}
+  .stars,.stars-twinkle,.aura-1,.aura-2,.contact-moon,.hero-art-aura{display:none!important}
+  .nav,.share-buttons,.share-link-row,.btn-arrow,.hero-cta-row{display:none!important}
+  .hero{min-height:auto;padding:1.5rem 1.5rem 1rem;page-break-after:avoid}
+  .hero-grid{display:flex;flex-direction:column;gap:1.5rem;text-align:center;max-width:none}
+  .hero-art-wrap{max-width:220px;animation:none;justify-self:end}
+  .hero-art-svg{filter:none!important}
+  .hill-silhouette,.temple-silhouette{fill:#1a1208!important}
+  .hero h1,.section-title,.contact h2{color:#1a1208!important;font-size:2rem!important;text-shadow:none!important}
+  .hero h1{font-size:2.6rem!important}
+  .hero-eyebrow,.eyebrow{color:#b87a4d!important;font-size:0.7rem!important;margin-bottom:0.5rem!important}
+  .hero-tamil{color:#8b4d2a!important;font-size:1.2rem!important;margin-bottom:0.8rem!important}
+  .hero-bio{color:#3d2f1e!important;font-size:0.92rem!important;line-height:1.5!important;margin-bottom:0.8rem!important}
+  .hero-meta-row{grid-template-columns:repeat(3,1fr)!important;border-color:#d4c697!important;background:#fff!important;box-shadow:none!important;margin:0.4rem 0 0.6rem!important;max-width:none!important;page-break-inside:avoid}
+  .hero-stat{padding:0.5rem 0.6rem!important;border-color:#d4c697!important}
+  .hero-stat::before{background:#b87a4d!important;width:24px!important;height:1.5px!important}
+  .hero-stat-k{color:#b87a4d!important;font-size:0.58rem!important;margin-bottom:0.2rem!important}
+  .hero-stat-v{color:#1a1208!important;font-size:0.85rem!important}
+  /* legacy meta-row */
+  .section{padding:1.5rem;page-break-inside:avoid;max-width:none}
+  .section-head{margin-bottom:1.2rem!important}
+  .section-title{font-size:1.6rem!important;margin-bottom:0.4rem!important}
+  .section-sub{display:none}
+  .details-grid{border-color:#d4c697!important}
+  .detail{padding:0.7rem 0.9rem!important;border-color:#d4c697!important}
+  .detail .k{color:#8a7a5e!important;font-size:0.62rem!important;margin-bottom:0.2rem!important}
+  .detail .v{color:#1a1208!important;font-size:1rem!important}
+  .detail .v-tamil,.detail .v-sub{color:#6b5c44!important;font-size:0.78rem!important}
+  .sign-feature,.panchang-card,.dasa-card,.era-card,.share-card{border-color:#d4c697!important;background:#fff!important;padding:1rem!important;page-break-inside:avoid}
+  .sign-icon{width:60px!important;height:60px!important;margin-bottom:0.5rem!important}
+  .sign-icon .glyph{font-size:2.6rem!important;color:#b87a4d!important;text-shadow:none!important}
+  .sign-feature h3{font-size:1.2rem!important;color:#1a1208!important}
+  .sign-tamil{color:#b87a4d!important;font-size:1rem!important;margin-bottom:0.5rem!important}
+  .sign-meaning{color:#3d2f1e!important;font-size:0.85rem!important;line-height:1.4!important}
+  .signs-3,.panchang-grid,.split{gap:0.8rem!important}
+  .panchang-card .icon{display:none}
+  .panchang-card h4{font-size:1.1rem!important;color:#1a1208!important}
+  .panchang-card .lead{color:#b87a4d!important;font-size:0.7rem!important;margin-bottom:0.5rem!important}
+  .panchang-card .row{padding:0.25rem 0!important;border-color:#e6dcc1!important}
+  .panchang-card .row dt{color:#6b5c44!important;font-size:0.78rem!important}
+  .panchang-card .row dd{color:#1a1208!important;font-size:0.82rem!important}
+  .dasa-card .planet{color:#1a1208!important;font-size:2rem!important}
+  .dasa-card .planet .em,.dasa-card .planet-tamil{color:#b87a4d!important}
+  .dasa-num{border-color:#d4c697!important;background:#fff!important;padding:0.6rem!important}
+  .dasa-num .n{color:#b87a4d!important;font-size:1.5rem!important}
+  .dasa-num .u{color:#6b5c44!important}
+  .era-list .row{padding:0.4rem 0!important;border-color:#e6dcc1!important}
+  .era-list .row .l{color:#6b5c44!important}
+  .era-list .row .r{color:#1a1208!important;font-size:1rem!important}
+  .era-list .row .r.em{color:#b87a4d!important}
+  /* SINGLE RASI — print */
+  .single-rasi{border-color:#d4c697!important;background:#fff!important;padding:1rem 1.2rem!important;box-shadow:none!important;page-break-inside:avoid}
+  .single-rasi::before,.single-rasi::after,.rasi-blot{display:none!important}
+  .rasi-corner{display:none!important}
+  .rasi-badge{background:#b87a4d!important;color:#fff!important;font-size:0.62rem!important;padding:3px 10px!important;margin-bottom:0.5rem!important;box-shadow:none!important}
+  .rasi-glyph-wrap{width:80px!important;height:80px!important;margin-bottom:0.4rem!important}
+  .rasi-glyph{font-size:3.6rem!important;color:#b87a4d!important;text-shadow:none!important}
+  .rasi-name{font-size:1.6rem!important;color:#1a1208!important;margin-bottom:0.3rem!important}
+  .rasi-name-en{color:#b87a4d!important;font-size:0.85rem!important;margin-bottom:0.8rem!important}
+  .rasi-stats{gap:0.4rem!important;grid-template-columns:repeat(4,1fr)!important}
+  .rasi-stat{padding:0.5rem!important;border-color:#d4c697!important;background:#fff!important}
+  .rasi-stat-k{color:#8a7a5e!important;font-size:0.58rem!important}
+  .rasi-stat-v{color:#1a1208!important;font-size:0.78rem!important}
+  /* RASI KATTAM — print */
+  .rasi-layout{grid-template-columns:1fr 1fr!important;gap:0.8rem!important;align-items:center!important}
+  .kattam-caption{color:#8a7a5e!important;font-size:0.62rem!important;margin-bottom:0.4rem!important}
+  .kattam{border-color:#b87a4d!important;box-shadow:none!important;background:#fff!important;max-width:none!important}
+  .kattam-cell{border-color:#d4c697!important;padding:0.3rem!important}
+  .kattam-cell .rn{color:#1a1208!important;font-size:0.66rem!important}
+  .kattam-cell .re{color:#8a7a5e!important;font-size:0.46rem!important}
+  .kattam-cell .gly{color:#1a1208!important;opacity:0.1!important;font-size:1.3rem!important}
+  .kattam-cell.occ{background:#f3e6cf!important}
+  .kattam-cell.lagna{box-shadow:inset 0 0 0 1.5px #b87a4d!important}
+  .kattam-cell .pin{background:#b87a4d!important;color:#fff!important;font-size:0.5rem!important;box-shadow:none!important;padding:1px 5px!important}
+  .kattam-cell .pin.moon{background:#8b4d2a!important}
+  .kattam-center{border-color:#d4c697!important;background:#faf3e4!important}
+  .kattam-center .om{color:#b87a4d!important;text-shadow:none!important;font-size:1.2rem!important}
+  .kattam-center .ttl{color:#1a1208!important;font-size:0.9rem!important}
+  .kattam-center .sttl{color:#8a7a5e!important;font-size:0.46rem!important}
+  .kattam-legend{margin-top:0.5rem!important;gap:0.3rem 0.9rem!important}
+  .kattam-legend .li{color:#6b5c44!important;font-size:0.6rem!important}
+  .kattam-legend .dot{background:#b87a4d!important;box-shadow:none!important;width:8px!important;height:8px!important}
+  .kattam-legend .dot.moon{background:#8b4d2a!important}
+  /* ZODIAC WALL (legacy) */
+  .zod{padding:0.4rem 0.2rem!important}
+  .zod .blot{width:60px!important;height:60px!important;margin-bottom:0.2rem!important}
+  .zod .blot::before{display:none}
+  .zod .glyph{font-size:2rem!important;color:#1a1208!important;text-shadow:none!important}
+  .zod.active .glyph,.zod.active .name{color:#b87a4d!important;text-shadow:none!important}
+  .zod .name{font-size:0.85rem!important;color:#1a1208!important}
+  .zod .range{color:#6b5c44!important;font-size:0.66rem!important}
+  .zod.active::after{background:#b87a4d!important;font-size:0.55rem!important}
+  .shloka-section{padding:1.5rem 1rem!important;page-break-inside:avoid;margin-top:1rem!important}
+  .shloka{color:#b87a4d!important;font-size:1rem!important;line-height:1.6!important;margin-bottom:0.6rem!important}
+  .shloka-meaning{color:#3d2f1e!important;font-size:0.85rem!important}
+  .contact{padding:1.5rem!important}
+  .contact-card-grid{gap:0.5rem!important}
+  .contact-card{padding:0.7rem 0.9rem!important;border-color:#d4c697!important;background:#fff!important;backdrop-filter:none!important}
+  .contact-card .ic{display:none}
+  .contact-card .label{color:#8a7a5e!important;font-size:0.62rem!important}
+  .contact-card .val{color:#1a1208!important;font-size:0.85rem!important}
+  footer{padding:1rem 1.5rem!important;border-color:#d4c697!important}
+  .foot-quote{color:#3d2f1e!important;font-size:0.82rem!important}
+  .foot-bottom{color:#8a7a5e!important;font-size:0.65rem!important;padding-top:0.5rem!important;margin-top:0.5rem!important}
+  .soc{border-color:#d4c697!important;color:#6b5c44!important}
+  @page{margin:1cm;size:A4}
+}
+</style>
+</head>
+<body>
+
+<div class="aura-1"></div>
+<div class="aura-2"></div>
+<div class="stars"></div>
+<div class="stars-twinkle"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="logo">
+    <span class="logo-mark">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor">
+        <circle cx="20" cy="20" r="3.5" fill="currentColor" stroke="none"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6" stroke-width="1"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6" stroke-width="1" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6" stroke-width="1" transform="rotate(120 20 20)"/>
+        <circle cx="36" cy="20" r="1.6" fill="currentColor" stroke="none"/>
+        <circle cx="4" cy="20" r="1.6" fill="currentColor" stroke="none"/>
+      </svg>
+    </span>
+    <span data-en="JATHAGAM" data-ta="ஜாதகம்">JATHAGAM</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#chart" data-en="Birth Chart" data-ta="ஜாதகம்">Birth Chart</a>
+    <a href="#signs" data-en="Core Signs" data-ta="அடையாளங்கள்">Core Signs</a>
+    <a href="#panchangam" data-en="Panchangam" data-ta="பஞ்சாங்கம்">Panchangam</a>
+    <a href="#zodiac" data-en="My Rasi" data-ta="எனது ராசி">My Rasi</a>
+    <a href="#contact" data-en="Contact" data-ta="தொடர்பு">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <div class="toggle-pill" role="group" aria-label="Language">
+      <button id="btn-en" class="active" type="button">EN</button>
+      <button id="btn-ta" class="tamil" type="button">த</button>
+    </div>
+    <button class="toggle-icon" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle light/dark">
+      <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <div class="nav-share-wrap">
+      <button class="nav-share-btn" id="nav-share-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        <span data-en="Take a Copy" data-ta="பிரதி எடு">Take a Copy</span>
+      </button>
+      <div class="nav-share-menu" id="nav-share-menu" role="menu">
+        <button class="nav-share-item" type="button" id="nav-print">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h12v6H6z"/><path d="M6 18h12v4H6z"/><path d="M2 8h20v10h-4M6 18H2V8"/></svg>
+          <span data-en="Print / Save as PDF" data-ta="அச்சு / PDF சேமி">Print / Save as PDF</span>
+        </button>
+        <a class="nav-share-item" href="index.html" download="jathagam-jothishwaran.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span data-en="Download HTML" data-ta="HTML பதிவிறக்கு">Download HTML</span>
+        </a>
+        <button class="nav-share-item" type="button" id="nav-copy-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07L11.7 4.7"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07L12.3 19.3"/></svg>
+          <span data-en="Copy Link" data-ta="இணைப்பு நகலெடு">Copy Link</span>
+        </button>
+        <a class="nav-share-item" id="nav-whatsapp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.4.1-.2 0-.3 0-.5l-1-2.3c-.2-.4-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.8.8-1.2 1.7-1.2 2.7 0 1 .4 2 .5 2.1.1.2 1.6 2.5 3.9 3.7 1.5.8 2.3 1 3 .9.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.4 1.3 4.9L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+          <span data-en="Share via WhatsApp" data-ta="WhatsApp பகிர">Share via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <a href="#contact" class="nav-cta" data-en-html="Contact <span>→</span>" data-ta-html="தொடர்பு <span>→</span>">Contact <span>→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="hero-eyebrow" data-en="Jathagam · For Alliance" data-ta="ஜாதகம் · திருமண நட்பு">Jathagam · For Alliance</div>
+      <h1 data-en-html="Jothishwaran<span class='accent'>.</span>" data-ta-html="ஜோதிஸ்வரன்<span class='accent'>.</span>">Jothishwaran<span class="accent">.</span></h1>
+      <div class="hero-tamil" data-en="ஜோதிஸ்வரன் · ஜாதகம்" data-ta="Jothishwaran · Jathagam">ஜோதிஸ்வரன் · ஜாதகம்</div>
+      <p class="hero-bio" data-en="My birth chart, shared openly for families considering an alliance. Cast for the small hours of a Sunday morning in Tiruvannamalai — Capricorn rising, the Moon in Leo, under the Pooram star." data-ta="எனது ஜாதகம் — திருமண நட்பை யோசிக்கும் குடும்பங்களுக்காகப் பகிரப்படுகிறது. திருவண்ணாமலையில் ஒரு ஞாயிறு அதிகாலையில் கணிக்கப்பட்டது — மகர லக்னம், சிம்ம ராசி, பூர நட்சத்திரம்.">My birth chart, shared openly for families considering an alliance. Cast for the small hours of a Sunday morning in Tiruvannamalai — Capricorn rising, the Moon in Leo, under the Pooram star.</p>
+      <div class="hero-meta-row">
+        <div class="hero-stat">
+          <span class="hero-stat-icon">✧</span>
+          <div class="hero-stat-k" data-en="Date of Birth" data-ta="பிறந்த தேதி">Date of Birth</div>
+          <div class="hero-stat-v" data-en="19 March 2000" data-ta="19 மார்ச் 2000">19 March 2000</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon">☽</span>
+          <div class="hero-stat-k" data-en="Time of Birth" data-ta="பிறந்த நேரம்">Time of Birth</div>
+          <div class="hero-stat-v mono">02:57 AM</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon">✦</span>
+          <div class="hero-stat-k" data-en="Place of Birth" data-ta="பிறந்த இடம்">Place of Birth</div>
+          <div class="hero-stat-v" data-en="Tiruvannamalai" data-ta="திருவண்ணாமலை">Tiruvannamalai</div>
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#chart" class="btn btn-primary"><span data-en="View the Chart" data-ta="ஜாதகம் காண">View the Chart</span> <span class="btn-arrow">→</span></a>
+        <a href="#contact" class="btn btn-ghost" data-en="Get in Touch" data-ta="தொடர்பு கொள்ள">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="om-divider reveal" aria-hidden="true"><span class="l"></span><svg class="orn" viewBox="0 0 48 48" fill="none"><circle class="ring" cx="24" cy="24" r="21" stroke="currentColor" stroke-width="1"/><g class="pet" fill="currentColor"><path d="M24 6c2.6 3.4 2.6 8.6 0 12-2.6-3.4-2.6-8.6 0-12Z"/><path d="M24 42c2.6-3.4 2.6-8.6 0-12-2.6 3.4-2.6 8.6 0 12Z"/><path d="M6 24c3.4 2.6 8.6 2.6 12 0-3.4-2.6-8.6-2.6-12 0Z"/><path d="M42 24c-3.4 2.6-8.6 2.6-12 0 3.4-2.6 8.6-2.6 12 0Z"/><path d="M11.3 11.3c4 1.3 7.7 5 9 9-4-1.3-7.7-5-9-9Z"/><path d="M36.7 36.7c-4-1.3-7.7-5-9-9 4 1.3 7.7 5 9 9Z"/><path d="M36.7 11.3c-1.3 4-5 7.7-9 9 1.3-4 5-7.7 9-9Z"/><path d="M11.3 36.7c1.3-4 5-7.7 9-9-1.3 4-5 7.7-9 9Z"/></g><circle cx="24" cy="24" r="3" fill="currentColor"/></svg><span class="l"></span></div>
+
+<!-- BIRTH DETAILS -->
+<section class="section" id="chart">
+  <div class="section-head reveal">
+    <div class="eyebrow" data-en="✦ The Native" data-ta="✦ பிறந்தவர்">✦ The Native</div>
+    <h2 class="section-title" data-en-html="Birth <em>Details</em>" data-ta-html="பிறப்பு <em>விவரங்கள்</em>">Birth <em>Details</em></h2>
+    <p class="section-sub" data-en="Cast for the night of 18 March turning into the early morning of 19 March, 2000 — a Saturday night, slipping into Sunday." data-ta="18 மார்ச் இரவு 19 மார்ச் 2000 அதிகாலையாக மாறும் தருணத்திற்காக கணிக்கப்பட்டது — சனிக்கிழமை இரவு ஞாயிறாக நகரும் நேரம்.">Cast for the night of 18 March turning into the early morning of 19 March, 2000 — a Saturday night, slipping into Sunday.</p>
+  </div>
+  <div class="details-grid reveal reveal-stagger">
+    <div class="detail">
+      <div class="k" data-en="Name" data-ta="பெயர்">Name</div>
+      <div class="v accent" data-en="Jothishwaran" data-ta="ஜோதிஸ்வரன்">Jothishwaran</div>
+      <div class="v-tamil">ஜோதிஸ்வரன்</div>
+    </div>
+    <div class="detail">
+      <div class="k" data-en="Father" data-ta="தந்தை">Father</div>
+      <div class="v" data-en="Mr. G. Ramachandran" data-ta="திரு. G. ராமச்சந்திரன்">Mr. G. Ramachandran</div>
+    </div>
+    <div class="detail">
+      <div class="k" data-en="Mother" data-ta="தாய்">Mother</div>
+      <div class="v" data-en="Mrs. R. Sathya" data-ta="திருமதி R. சத்யா">Mrs. R. Sathya</div>
+    </div>
+    <div class="detail">
+      <div class="k" data-en="Date of Birth" data-ta="பிறந்த தேதி">Date of Birth</div>
+      <div class="v" data-en="19 March 2000" data-ta="19 மார்ச் 2000">19 March 2000</div>
+      <div class="v-sub" data-en="Saturday night → Sunday early morning" data-ta="சனிக்கிழமை இரவு → ஞாயிறு அதிகாலை">Saturday night → Sunday early morning</div>
+    </div>
+    <div class="detail">
+      <div class="k" data-en="Time of Birth" data-ta="பிறந்த நேரம்">Time of Birth</div>
+      <div class="v accent mono">02:57 AM</div>
+      <div class="v-sub" data-en="Chandra Hora · Sathveega Velai" data-ta="சந்திர ஹோரை · சாத்வீக வேளை">Chandra Hora · Sathveega Velai</div>
+    </div>
+    <div class="detail">
+      <div class="k" data-en="Place" data-ta="இடம்">Place</div>
+      <div class="v" data-en="Tiruvannamalai" data-ta="திருவண்ணாமலை">Tiruvannamalai</div>
+      <div class="v-sub" data-en="Tamil Nadu, India" data-ta="தமிழ்நாடு, இந்தியா">Tamil Nadu, India</div>
+    </div>
+    <div class="detail">
+      <div class="k" data-en="Tamil Year" data-ta="தமிழ் வருஷம்">Tamil Year</div>
+      <div class="v italic" data-en="Pramathi" data-ta="பிரமாதி">Pramathi</div>
+      <div class="v-tamil">பிரமாதி</div>
+    </div>
+    <div class="detail">
+      <div class="k" data-en="Tamil Month" data-ta="தமிழ் மாதம்">Tamil Month</div>
+      <div class="v italic" data-en="Panguni · 5th day" data-ta="பங்குனி · 5-ம் நாள்">Panguni · 5th day</div>
+      <div class="v-tamil">பங்குனி</div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE SIGNS -->
+<section class="section" id="signs">
+  <div class="section-head reveal">
+    <div class="eyebrow" data-en="✦ Astrological Core" data-ta="✦ ஜோதிட மையம்">✦ Astrological Core</div>
+    <h2 class="section-title" data-en-html="Three <em>Sacred Signs</em>" data-ta-html="மூன்று <em>புனித அடையாளங்கள்</em>">Three <em>Sacred Signs</em></h2>
+    <p class="section-sub" data-en="Every chart hangs on three points — where the eastern horizon opens, where the Moon resides, and the star presiding over the birth itself." data-ta="ஒவ்வொரு ஜாதகமும் மூன்று புள்ளிகளில் தங்கியுள்ளது — கிழக்கு வானம் திறக்கும் இடம், சந்திரன் தங்கும் ராசி, பிறப்பின் நட்சத்திரம்.">Every chart hangs on three points — where the eastern horizon opens, where the Moon resides, and the star presiding over the birth itself.</p>
+  </div>
+  <div class="signs-3 reveal reveal-stagger">
+    <div class="sign-feature">
+      <div class="role" data-en="Lagna · Ascendant" data-ta="லக்னம்">Lagna · Ascendant</div>
+      <div class="sign-icon"><span class="blot"></span><span class="glyph">♑</span></div>
+      <h3 data-en="Capricorn" data-ta="மகரம்">Capricorn</h3>
+      <div class="sign-tamil">மகரம் · Magaram</div>
+      <p class="sign-meaning" data-en="The rising sign — discipline, slow ascent, structure beneath everything. The chart's foundation stone." data-ta="லக்னம் — ஒழுக்கம், மெல்லிய எழுச்சி, எல்லாவற்றுக்கும் அடியில் உள்ள கட்டமைப்பு. ஜாதகத்தின் அஸ்திவாரக் கல்.">The rising sign — discipline, slow ascent, structure beneath everything. The chart's foundation stone.</p>
+    </div>
+    <div class="sign-feature">
+      <div class="role" data-en="Rasi · Moon Sign" data-ta="ராசி">Rasi · Moon Sign</div>
+      <div class="sign-icon"><span class="blot"></span><span class="glyph">♌</span></div>
+      <h3 data-en="Leo" data-ta="சிம்மம்">Leo</h3>
+      <div class="sign-tamil">சிம்மம் · Simmam</div>
+      <p class="sign-meaning" data-en="Moon in Leo — warmth, presence, an inner sun. The seat of feeling and the way home is held." data-ta="சிம்ம ராசியில் சந்திரன் — அரவணைப்பு, இருப்பு, உள்ளே ஒளிரும் சூரியன். உணர்வுகளின் இருக்கை.">Moon in Leo — warmth, presence, an inner sun. The seat of feeling and the way home is held.</p>
+    </div>
+    <div class="sign-feature">
+      <div class="role" data-en="Nakshatra · Birth Star" data-ta="நட்சத்திரம்">Nakshatra · Birth Star</div>
+      <div class="sign-icon"><span class="blot"></span><span class="glyph">✦</span></div>
+      <h3 data-en="Pooram" data-ta="பூரம்">Pooram</h3>
+      <div class="sign-tamil">பூரம் · 2nd Padam</div>
+      <p class="sign-meaning" data-en="Star letters Mo · Taa · Tee · Too. Venus rules — creativity, generosity, an ease with making things beautiful." data-ta="பெயர் எழுத்துகள் மோ · டா · டி · டு. சுக்ரன் ஆட்சி — படைப்பாற்றல், கொடை, அழகாக படைக்கும் இயல்பு.">Star letters Mo · Taa · Tee · Too. Venus rules — creativity, generosity, an ease with making things beautiful.</p>
+    </div>
+  </div>
+</section>
+
+<div class="om-divider reveal" aria-hidden="true"><span class="l"></span><svg class="orn" viewBox="0 0 48 48" fill="none"><circle class="ring" cx="24" cy="24" r="21" stroke="currentColor" stroke-width="1"/><g class="pet" fill="currentColor"><path d="M24 6c2.6 3.4 2.6 8.6 0 12-2.6-3.4-2.6-8.6 0-12Z"/><path d="M24 42c2.6-3.4 2.6-8.6 0-12-2.6 3.4-2.6 8.6 0 12Z"/><path d="M6 24c3.4 2.6 8.6 2.6 12 0-3.4-2.6-8.6-2.6-12 0Z"/><path d="M42 24c-3.4 2.6-8.6 2.6-12 0 3.4-2.6 8.6-2.6 12 0Z"/><path d="M11.3 11.3c4 1.3 7.7 5 9 9-4-1.3-7.7-5-9-9Z"/><path d="M36.7 36.7c-4-1.3-7.7-5-9-9 4 1.3 7.7 5 9 9Z"/><path d="M36.7 11.3c-1.3 4-5 7.7-9 9 1.3-4 5-7.7 9-9Z"/><path d="M11.3 36.7c1.3-4 5-7.7 9-9-1.3 4-5 7.7-9 9Z"/></g><circle cx="24" cy="24" r="3" fill="currentColor"/></svg><span class="l"></span></div>
+
+<!-- PANCHANGAM -->
+<section class="section" id="panchangam">
+  <div class="section-head reveal">
+    <div class="eyebrow" data-en="✦ Cosmic Time" data-ta="✦ கால அமைப்பு">✦ Cosmic Time</div>
+    <h2 class="section-title" data-en-html="Panchangam <em>at Birth</em>" data-ta-html="பிறப்பின் <em>பஞ்சாங்கம்</em>">Panchangam <em>at Birth</em></h2>
+    <p class="section-sub" data-en="The five-fold almanac measurement of the moment — tithi, yogam, karnam, hora, and the count of nazhigai since sunrise." data-ta="பிறந்த தருணத்தின் ஐந்து வகைப் பஞ்சாங்கம் — திதி, யோகம், கரணம், ஹோரை, சூரிய உதயத்திலிருந்தான நாழிகை.">The five-fold almanac measurement of the moment — tithi, yogam, karnam, hora, and the count of nazhigai since sunrise.</p>
+  </div>
+  <div class="panchang-grid reveal reveal-stagger">
+    <div class="panchang-card">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+      <div class="lead" data-en="Lunar Phase" data-ta="சந்திர நிலை">Lunar Phase</div>
+      <h4 data-en="Sukla Paksham" data-ta="சுக்ல பட்சம்">Sukla Paksham</h4>
+      <dl>
+        <div class="row"><dt data-en="Tithi" data-ta="திதி">Tithi</dt><dd data-en-html="Trayodasi <span class='em'>·</span> 13th" data-ta-html="த்ரயோதசி <span class='em'>·</span> 13-ம்">Trayodasi <span class="em">·</span> 13th</dd></div>
+        <div class="row"><dt data-en="Paksham" data-ta="பட்சம்">Paksham</dt><dd data-en="Waxing Moon" data-ta="வளர் பிறை">Waxing Moon</dd></div>
+        <div class="row"><dt data-en="Day" data-ta="நாள்">Day</dt><dd data-en="5th of Panguni" data-ta="பங்குனி 5-ம் நாள்">5th of Panguni</dd></div>
+      </dl>
+    </div>
+    <div class="panchang-card">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+      <div class="lead" data-en="Yogam & Karnam" data-ta="யோகம் & கரணம்">Yogam &amp; Karnam</div>
+      <h4 data-en="Siddha Yogam" data-ta="சித்த யோகம்">Siddha Yogam</h4>
+      <dl>
+        <div class="row"><dt data-en="Yogam" data-ta="யோகம்">Yogam</dt><dd data-en-html="<span class='em'>Siddha</span>" data-ta-html="<span class='em'>சித்த</span>"><span class="em">Siddha</span></dd></div>
+        <div class="row"><dt data-en="Karnam" data-ta="கரணம்">Karnam</dt><dd data-en="Thaithula" data-ta="தைதுல">Thaithula</dd></div>
+        <div class="row"><dt data-en="Quality" data-ta="இயல்பு">Quality</dt><dd data-en="Auspicious" data-ta="சுபமானது">Auspicious</dd></div>
+      </dl>
+    </div>
+    <div class="panchang-card">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+      <div class="lead" data-en="Hora & Sunrise" data-ta="ஹோரை & உதயம்">Hora &amp; Sunrise</div>
+      <h4 data-en="Chandra Hora" data-ta="சந்திர ஹோரை">Chandra Hora</h4>
+      <dl>
+        <div class="row"><dt data-en="Hora" data-ta="ஹோரை">Hora</dt><dd data-en="Moon" data-ta="சந்திரன்">Moon</dd></div>
+        <div class="row"><dt data-en="Nature" data-ta="இயல்பு">Nature</dt><dd data-en="Sathveega Velai" data-ta="சாத்வீக வேளை">Sathveega Velai</dd></div>
+        <div class="row"><dt data-en="Since Sunrise" data-ta="உதயத்திலிருந்து">Since Sunrise</dt><dd data-en="51 Naz · 30 Vin" data-ta="51 நாழி · 30 விநாடி">51 Naz · 30 Vin</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- DASA + ERAS -->
+<section class="section" id="dasa">
+  <div class="section-head reveal">
+    <div class="eyebrow" data-en="✦ Planetary Period" data-ta="✦ கிரக காலம்">✦ Planetary Period</div>
+    <h2 class="section-title" data-en-html="Dasa Balance &amp; <em>Era Years</em>" data-ta-html="தசை &amp; <em>காலக்கணக்கு</em>">Dasa Balance &amp; <em>Era Years</em></h2>
+    <p class="section-sub" data-en="The Vimshottari period running at the moment of first breath, and the year in every calendar that mattered." data-ta="முதல் மூச்சின் தருணத்தில் ஓடிய விம்சோத்தரி தசை, பிறகு அந்த ஆண்டை அழைத்த ஒவ்வொரு பஞ்சாங்க பெயரும்.">The Vimshottari period running at the moment of first breath, and the year in every calendar that mattered.</p>
+  </div>
+  <div class="split reveal">
+    <div class="dasa-card">
+      <div class="label" data-en="Running Dasa at Birth" data-ta="பிறப்பின் தசை">Running Dasa at Birth</div>
+      <div class="planet" data-en-html="Sukra <span class='em'>Dasa</span>" data-ta-html="சுக்ரன் <span class='em'>தசை</span>">Sukra <span class="em">Dasa</span></div>
+      <div class="planet-tamil">சுக்ர தசை · Venus</div>
+      <div class="dasa-numbers">
+        <div class="dasa-num"><div class="n">04</div><div class="u" data-en="Years" data-ta="ஆண்டு">Years</div></div>
+        <div class="dasa-num"><div class="n">12</div><div class="u" data-en="Months" data-ta="மாதம்">Months</div></div>
+        <div class="dasa-num"><div class="n">07</div><div class="u" data-en="Days" data-ta="நாள்">Days</div></div>
+        <div class="dasa-num"><div class="n">19</div><div class="u" data-en="Ghatis" data-ta="கடிகை">Ghatis</div></div>
+      </div>
+    </div>
+    <div class="era-card">
+      <div class="label" data-en="Traditional Era Years" data-ta="பாரம்பரிய காலக்கணக்கு">Traditional Era Years</div>
+      <h3 data-en-html="For the year <em>2000</em>" data-ta-html="ஆண்டு <em>2000</em>-க்காக">For the year <em>2000</em></h3>
+      <p class="sub" data-en="The same moment named across every almanac." data-ta="ஒரே தருணம், ஒவ்வொரு பஞ்சாங்கத்திலும் பல பெயர்களில்.">The same moment named across every almanac.</p>
+      <div class="era-list">
+        <div class="row"><div class="l" data-en="Salivahana Saka" data-ta="சாலிவாகன சகாப்தம்">Salivahana Saka</div><div class="r em">1921</div></div>
+        <div class="row"><div class="l" data-en="Kaliyugadhi" data-ta="கலியுகாதி">Kaliyugadhi</div><div class="r em">5100</div></div>
+        <div class="row"><div class="l" data-en="Fasli" data-ta="பஸலி">Fasli</div><div class="r">1409</div></div>
+        <div class="row"><div class="l" data-en="Kollam" data-ta="கொல்லம்">Kollam</div><div class="r">1175</div></div>
+        <div class="row"><div class="l" data-en="Hijri" data-ta="ஹிஜ்ரி">Hijri</div><div class="r">1420 — 21</div></div>
+        <div class="row"><div class="l" data-en="Ayanam" data-ta="அயனம்">Ayanam</div><div class="r" data-en="Uttarayana" data-ta="உத்தராயணம்">Uttarayana</div></div>
+        <div class="row"><div class="l" data-en="Ritu" data-ta="ருது">Ritu</div><div class="r" data-en="Sisira · Late Winter" data-ta="சிசிர · பிற்பகுதி குளிர்காலம்">Sisira · Late Winter</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="om-divider reveal" aria-hidden="true"><span class="l"></span><svg class="orn" viewBox="0 0 48 48" fill="none"><circle class="ring" cx="24" cy="24" r="21" stroke="currentColor" stroke-width="1"/><g class="pet" fill="currentColor"><path d="M24 6c2.6 3.4 2.6 8.6 0 12-2.6-3.4-2.6-8.6 0-12Z"/><path d="M24 42c2.6-3.4 2.6-8.6 0-12-2.6 3.4-2.6 8.6 0 12Z"/><path d="M6 24c3.4 2.6 8.6 2.6 12 0-3.4-2.6-8.6-2.6-12 0Z"/><path d="M42 24c-3.4 2.6-8.6 2.6-12 0 3.4-2.6 8.6-2.6 12 0Z"/><path d="M11.3 11.3c4 1.3 7.7 5 9 9-4-1.3-7.7-5-9-9Z"/><path d="M36.7 36.7c-4-1.3-7.7-5-9-9 4 1.3 7.7 5 9 9Z"/><path d="M36.7 11.3c-1.3 4-5 7.7-9 9 1.3-4 5-7.7 9-9Z"/><path d="M11.3 36.7c1.3-4 5-7.7 9-9-1.3 4-5 7.7-9 9Z"/></g><circle cx="24" cy="24" r="3" fill="currentColor"/></svg><span class="l"></span></div>
+
+<!-- MY RASI (single) -->
+<section class="section" id="zodiac">
+  <div class="section-head reveal">
+    <div class="eyebrow" data-en="✦ The Wheel" data-ta="✦ ராசிச் சக்கரம்">✦ The Wheel</div>
+    <h2 class="section-title" data-en-html="My <em>Rasi</em>" data-ta-html="எனது <em>ராசி</em>">My <em>Rasi</em></h2>
+    <p class="section-sub" data-en="The birth chart read in the traditional South Indian style — Rasi, Amsam (Navamsam) and Chandira Navamsam, with the twelve rasis held in their fixed houses." data-ta="பிறப்பு ஜாதகம் தென்னிந்திய முறையில் — ராசி, அம்சம் (நவாம்சம்), சந்திர நவாம்சம் — பன்னிரண்டு ராசிகள் நிலையான இடங்களில்.">The birth chart read in the traditional South Indian style — Rasi, Amsam (Navamsam) and Chandira Navamsam, with the twelve rasis held in their fixed houses.</p>
+  </div>
+  <div class="charts-grid reveal">
+    <div class="chart-block" data-chart="rasi">
+      <div class="kattam-caption" data-en="Rasi · ராசி" data-ta="ராசி கட்டம்">Rasi · ராசி</div>
+      <div class="kattam" data-center-en="Rasi" data-center-ta="ராசி"></div>
+    </div>
+    <div class="chart-block" data-chart="amsam">
+      <div class="kattam-caption" data-en="Amsam · Navamsam" data-ta="அம்சம் · நவாம்சம்">Amsam · Navamsam</div>
+      <div class="kattam" data-center-en="Amsam" data-center-ta="அம்சம்"></div>
+    </div>
+    <div class="chart-block" data-chart="navamsam">
+      <div class="kattam-caption" data-en="Chandira Navamsam · சந்திர நவாம்சம்" data-ta="சந்திர நவாம்சம்">Chandira Navamsam · சந்திர நவாம்சம்</div>
+      <div class="kattam" data-center-en="Chandira Navamsam" data-center-ta="சந்திர நவாம்சம்"></div>
+    </div>
+    <div class="single-rasi">
+      <div class="rasi-corner top-left">✦</div>
+      <div class="rasi-corner top-right">✦</div>
+      <div class="rasi-corner bottom-left">✦</div>
+      <div class="rasi-corner bottom-right">✦</div>
+      <div class="rasi-badge" data-en="MY RASI" data-ta="எனது ராசி">MY RASI</div>
+      <div class="rasi-glyph-wrap">
+        <span class="rasi-blot"></span>
+        <span class="rasi-glyph">♌</span>
+      </div>
+      <div class="rasi-name" data-en="Simmam" data-ta="சிம்மம்">Simmam</div>
+      <div class="rasi-name-en">சிம்மம் · Leo</div>
+      <div class="rasi-stats">
+        <div class="rasi-stat">
+          <div class="rasi-stat-k" data-en="Ruled by" data-ta="ஆட்சி">Ruled by</div>
+          <div class="rasi-stat-v" data-en="☉ Sun" data-ta="☉ சூரியன்">☉ Sun</div>
+        </div>
+        <div class="rasi-stat">
+          <div class="rasi-stat-k" data-en="Element" data-ta="பூதம்">Element</div>
+          <div class="rasi-stat-v" data-en="✨ Fire" data-ta="✨ அக்னி">✨ Fire</div>
+        </div>
+        <div class="rasi-stat">
+          <div class="rasi-stat-k" data-en="Nakshatra" data-ta="நட்சத்திரம்">Nakshatra</div>
+          <div class="rasi-stat-v" data-en="Pooram · 2°" data-ta="பூரம் · 2°">Pooram · 2°</div>
+        </div>
+        <div class="rasi-stat">
+          <div class="rasi-stat-k" data-en="Letters" data-ta="எழுத்துகள்">Letters</div>
+          <div class="rasi-stat-v" data-en="Mo · Taa · Tee · Too" data-ta="மோ · டா · டி · டு">Mo · Taa · Tee · Too</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="planet-key reveal" id="planetKey"></div>
+  <p class="chart-foot reveal" style="max-width:620px;margin-left:auto;margin-right:auto;margin-top:1.4rem" data-en="✦ Transcribed from the handwritten jathagam. Please verify each placement." data-ta="✦ கையெழுத்து ஜாதகத்திலிருந்து பெயர்க்கப்பட்டது. ஒவ்வொரு நிலையையும் சரிபார்க்கவும்.">✦ Transcribed from the handwritten jathagam. Please verify each placement.</p>
+</section>
+
+<!-- SHLOKA -->
+<section class="shloka-section reveal">
+  <div class="shloka">
+    ஜெனனி ஜனிதம் சௌக்யாதி வர்த்ததே<br>
+    குலே சுப்ரதம் பதம் சுரிவ பின்யாஞ்ச<br>
+    விச்வயதே ஜென்ம பத்திரிகா
+  </div>
+  <p class="shloka-meaning" data-en="May this birth chart bring auspiciousness, prosperity, and well-being to the native and their family — through every step of life." data-ta="இந்த ஜாதகம் பிறந்தவருக்கும் அவரது குடும்பத்துக்கும் வாழ்வின் ஒவ்வொரு படிநிலையிலும் சுபம், செழிப்பு, நலம் நல்க வாழ்த்துகள்.">May this birth chart bring auspiciousness, prosperity, and well-being to the native and their family — through every step of life.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <!-- Twilight Arunachala backdrop with Leo overhead -->
+  <svg class="contact-moon" viewBox="0 0 400 400" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="contactGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="rgba(226,165,116,0.35)"/>
+        <stop offset="60%" stop-color="rgba(226,165,116,0.08)"/>
+        <stop offset="100%" stop-color="rgba(226,165,116,0)"/>
+      </radialGradient>
+    </defs>
+    <circle cx="200" cy="200" r="200" fill="url(#contactGlow)"/>
+    <!-- subtle Leo overhead -->
+    <g class="leo-line" opacity="0.5">
+      <path d="M 280 90 L 305 70 L 325 95 L 320 135 L 295 165 L 260 185"/>
+      <path d="M 260 185 L 200 175 L 145 130"/>
+      <path d="M 145 130 L 80 110 L 200 175 Z"/>
+    </g>
+    <circle cx="260" cy="185" r="3" fill="#fff8e6" opacity="0.9"/>
+    <circle cx="80" cy="110" r="2.4" fill="#fff8e6" opacity="0.8"/>
+    <circle cx="320" cy="135" r="2.2" fill="#fff8e6" opacity="0.8"/>
+    <circle cx="145" cy="130" r="2" fill="#fff8e6" opacity="0.7"/>
+    <circle cx="200" cy="175" r="1.8" fill="#fff8e6" opacity="0.7"/>
+    <circle cx="325" cy="95" r="1.6" fill="#fff8e6" opacity="0.6"/>
+    <circle cx="305" cy="70" r="1.6" fill="#fff8e6" opacity="0.6"/>
+    <circle cx="280" cy="90" r="1.8" fill="#fff8e6" opacity="0.7"/>
+  </svg>
+  <div class="contact-inner reveal">
+    <div class="eyebrow" data-en="✦ For Alliance Enquiries" data-ta="✦ திருமண நட்பு விசாரணைகள்">✦ For Alliance Enquiries</div>
+    <h2 data-en-html="Get in <em>Touch</em>" data-ta-html="<em>தொடர்பு</em> கொள்ள">Get in <em>Touch</em></h2>
+    <p class="sub" data-en="If your family is considering an alliance and would like to know more, please reach out through any of the channels below. Elders and parents most welcome." data-ta="உங்கள் குடும்பம் திருமண நட்பை யோசிக்கிறது என்றால், கீழே உள்ள எந்த வழியின் மூலமாகவும் தொடர்பு கொள்ளலாம். பெற்றோர்களும் பெரியவர்களும் மிகவும் வரவேற்கப்படுகிறார்கள்.">If your family is considering an alliance and would like to know more, please reach out through any of the channels below. Elders and parents most welcome.</p>
+    <div class="contact-card-grid reveal-stagger">
+      <a href="/cdn-cgi/l/email-protection#2d444c404742594544485e456d4a404c4441034e4240" class="contact-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div><div class="label" data-en="Email" data-ta="மின்னஞ்சல்">Email</div><div class="val mono"><span class="__cf_email__" data-cfemail="3f565e5255504b57565a4c577f58525e5653115c5052">[email&#160;protected]</span></div></div>
+      </a>
+      <a href="tel:+916380900348" class="contact-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="label" data-en="Phone" data-ta="தொலைபேசி">Phone</div><div class="val mono">+91 63809 00348</div></div>
+      </a>
+      <a href="https://www.linkedin.com/in/jothiesh-7-joe/" target="_blank" rel="noopener" class="contact-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19v4.81h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></div>
+        <div><div class="label" data-en="LinkedIn" data-ta="லிங்க்ட்இன்">LinkedIn</div><div class="val mono">linkedin.com/in/jothiesh-7-joe</div></div>
+      </a>
+      <a href="http://jothiesh.click/jothiesh-portfolio" target="_blank" rel="noopener" class="contact-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M10 5h4v2h-4z"/></svg></div>
+        <div><div class="label" data-en="Portfolio" data-ta="போர்ட்ஃபோலியோ">Portfolio</div><div class="val mono">jothiesh.click/jothiesh-portfolio</div></div>
+      </a>
+      <a href="http://jothiesh.click" target="_blank" rel="noopener" class="contact-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div><div class="label" data-en="Website" data-ta="இணையதளம்">Website</div><div class="val mono">jothiesh.click</div></div>
+      </a>
+      <a href="https://maps.google.com/?q=Tiruvannamalai" target="_blank" rel="noopener" class="contact-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="label" data-en="Location" data-ta="இடம்">Location</div><div class="val" data-en="Tiruvannamalai, TN" data-ta="திருவண்ணாமலை, தமிழ்நாடு">Tiruvannamalai, TN</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-left">|| சுபம் ||</div>
+    <div class="foot-middle">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor">
+        <circle cx="20" cy="20" r="3" fill="currentColor" stroke="none"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6" stroke-width="1"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6" stroke-width="1" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6" stroke-width="1" transform="rotate(120 20 20)"/>
+      </svg>
+      <span data-en="JATHAGAM" data-ta="ஜாதகம்">JATHAGAM</span>
+    </div>
+    <div class="foot-right">
+      <a class="soc" href="tel:+916380900348" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      <a class="soc" href="https://www.linkedin.com/in/jothiesh-7-joe/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19v4.81h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+      <a class="soc" href="/cdn-cgi/l/email-protection#7811191512170c10111d0b10381f15191114561b1715" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+      <a class="soc" href="http://jothiesh.click" target="_blank" rel="noopener" aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+      <a class="soc" href="http://jothiesh.click/jothiesh-portfolio" target="_blank" rel="noopener" aria-label="Portfolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg></a>
+    </div>
+  </div>
+  <p class="foot-quote" data-en="“May this chart bring long life, good health, prosperity, and wisdom — to the native, and to the family it joins.”" data-ta="“இந்த ஜாதகம் பிறந்தவருக்கும், இணையப் போகும் குடும்பத்துக்கும் நீண்ட ஆயுள், நல்ல ஆரோக்கியம், செழிப்பு, ஞானம் வழங்கட்டும்.”">"May this chart bring long life, good health, prosperity, and wisdom — to the native, and to the family it joins."</p>
+  <div class="foot-bottom" data-en="© Jothishwaran · 2026 · All rights reserved" data-ta="© ஜோதிஸ்வரன் · 2026 · அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை">© Jothishwaran · 2026 · All rights reserved</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── Rasi / Amsam / Chandira Navamsam renderer ──
+   Transcribed from the handwritten jathagam. Edit the placement maps below
+   to correct any planet: keys are rasi names, values are planet codes. */
+(function(){
+  // Rasis in South-Indian fixed ring order (drawn around the centre)
+  var RASIS=[
+    {k:"meenam",ta:"மீனம்",en:"Pisces",g:"♓"},
+    {k:"mesham",ta:"மேஷம்",en:"Aries",g:"♈"},
+    {k:"rishabam",ta:"ரிஷபம்",en:"Taurus",g:"♉"},
+    {k:"mithunam",ta:"மிதுனம்",en:"Gemini",g:"♊"},
+    {k:"kumbham",ta:"கும்பம்",en:"Aquarius",g:"♒"},
+    {k:"kadagam",ta:"கடகம்",en:"Cancer",g:"♋"},
+    {k:"makaram",ta:"மகரம்",en:"Capricorn",g:"♑"},
+    {k:"simmam",ta:"சிம்மம்",en:"Leo",g:"♌"},
+    {k:"dhanusu",ta:"தனுசு",en:"Sagittarius",g:"♐"},
+    {k:"vrichigam",ta:"விருச்சிகம்",en:"Scorpio",g:"♏"},
+    {k:"thulam",ta:"துலாம்",en:"Libra",g:"♎"},
+    {k:"kanni",ta:"கன்னி",en:"Virgo",g:"♍"}
+  ];
+  var P={
+    la:{en:"La",ta:"ல",fen:"Lagnam",fta:"லக்னம்",cls:"lagnam"},
+    su:{en:"Su",ta:"சூ",fen:"Sun",fta:"சூரியன்"},
+    ch:{en:"Mo",ta:"சந்",fen:"Moon",fta:"சந்திரன்",cls:"moon"},
+    ma:{en:"Ma",ta:"செ",fen:"Mars",fta:"செவ்வாய்"},
+    bu:{en:"Me",ta:"பு",fen:"Mercury",fta:"புதன்"},
+    gu:{en:"Ju",ta:"கு",fen:"Jupiter",fta:"குரு"},
+    ve:{en:"Ve",ta:"சுக்",fen:"Venus",fta:"சுக்ரன்"},
+    sa:{en:"Sa",ta:"ச",fen:"Saturn",fta:"சனி"},
+    ra:{en:"Ra",ta:"ரா",fen:"Rahu",fta:"ராகு"},
+    ke:{en:"Ke",ta:"கே",fen:"Ketu",fta:"கேது"}
+  };
+  // ── PLACEMENTS (edit to match the handwritten chart) ──
+  var CHARTS={
+    rasi:{meenam:["su","bu"],mesham:["gu"],kadagam:["ra"],simmam:["ch","ma"],makaram:["la","ke"],vrichigam:["ve"],kanni:["sa"]},
+    amsam:{mesham:["ra"],thulam:["ke"],makaram:["la"],simmam:["su"],kanni:["gu","bu"],rishabam:["ve"],mithunam:["ma"],dhanusu:["sa"],kumbham:["ch"]},
+    navamsam:{kadagam:["ch"],makaram:["la"],mesham:["su","ke"],thulam:["ra"],kanni:["ma"],simmam:["gu"],vrichigam:["ve"],dhanusu:["sa"],mithunam:["bu"]}
+  };
+
+  function cellHTML(r,planets){
+    var occ=planets&&planets.length;
+    var hasLa=planets&&planets.indexOf("la")>-1;
+    var pills=(planets||[]).map(function(code){
+      var p=P[code];if(!p)return"";
+      return '<span class="pl '+(p.cls||"")+'" data-en="'+p.en+'" data-ta="'+p.ta+'">'+p.en+'</span>';
+    }).join("");
+    return '<div class="kattam-cell'+(occ?" has-planet":"")+(hasLa?" has-lagnam":"")+'">'
+      +'<span class="gly">'+r.g+'</span>'
+      +'<span class="rn" data-en="'+cap(r.k)+'" data-ta="'+r.ta+'">'+cap(r.k)+'</span>'
+      +'<span class="re">'+r.en+'</span>'
+      +(occ?'<div class="planets">'+pills+'</div>':'')
+      +'</div>';
+  }
+  function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+
+  document.querySelectorAll(".charts-grid .kattam").forEach(function(grid){
+    var chart=grid.closest("[data-chart]").getAttribute("data-chart");
+    var placements=CHARTS[chart]||{};
+    var html='<div class="kattam-center">'
+      +'<span class="om">ஓம்</span>'
+      +'<span class="ttl" data-en="'+grid.getAttribute("data-center-en")+'" data-ta="'+grid.getAttribute("data-center-ta")+'">'+grid.getAttribute("data-center-en")+'</span>'
+      +'<span class="sttl" data-en="South Indian" data-ta="தென்னிந்திய முறை">South Indian</span>'
+      +'</div>';
+    RASIS.forEach(function(r){ html+=cellHTML(r,placements[r.k]); });
+    grid.innerHTML=html;
+  });
+
+  // Planet key / legend
+  var key=document.getElementById("planetKey");
+  if(key){
+    var order=["la","su","ch","ma","bu","gu","ve","sa","ra","ke"];
+    key.innerHTML=order.map(function(c){
+      var p=P[c];
+      return '<span class="pk"><b>'+p.en+'</b><span data-en="'+p.fen+'" data-ta="'+p.fta+'">'+p.fen+'</span></span>';
+    }).join("");
+  }
+})();
+</script>
+
+<script>
+(function(){
+  const html=document.documentElement;
+  const btnEn=document.getElementById("btn-en");
+  const btnTa=document.getElementById("btn-ta");
+  const themeBtn=document.getElementById("theme-toggle");
+
+  // --- Language ---
+  function setLang(lang){
+    html.setAttribute("data-lang",lang);
+    html.lang = lang==="ta" ? "ta" : "en";
+    btnEn.classList.toggle("active",lang==="en");
+    btnTa.classList.toggle("active",lang==="ta");
+    try{localStorage.setItem("jathagam-lang",lang)}catch(e){}
+    const k="data-"+lang, kh="data-"+lang+"-html";
+    document.querySelectorAll("[data-en]").forEach(el=>{
+      if(el.hasAttribute(k)) el.textContent=el.getAttribute(k);
+    });
+    document.querySelectorAll("[data-en-html]").forEach(el=>{
+      if(el.hasAttribute(kh)) el.innerHTML=el.getAttribute(kh);
+    });
+  }
+  btnEn.addEventListener("click",()=>setLang("en"));
+  btnTa.addEventListener("click",()=>setLang("ta"));
+
+  // --- Theme ---
+  function setTheme(t){
+    html.setAttribute("data-theme",t);
+    try{localStorage.setItem("jathagam-theme",t)}catch(e){}
+  }
+  themeBtn.addEventListener("click",()=>{
+    const cur=html.getAttribute("data-theme");
+    setTheme(cur==="dark"?"light":"dark");
+  });
+
+  // --- Init ---
+  let savedLang="en", savedTheme="light";
+  try{savedLang=localStorage.getItem("jathagam-lang")||"en"}catch(e){}
+  try{savedTheme=localStorage.getItem("jathagam-theme")||"light"}catch(e){}
+  setTheme(savedTheme);
+  setLang(savedLang);
+
+  // --- Nav scroll ---
+  const nav=document.getElementById("nav");
+  let ticking=false;
+  window.addEventListener("scroll",()=>{
+    if(!ticking){
+      requestAnimationFrame(()=>{
+        nav.classList.toggle("scrolled",window.scrollY>40);
+        ticking=false;
+      });
+      ticking=true;
+    }
+  },{passive:true});
+
+  // --- Reveal ---
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:"0px 0px -60px 0px"});
+  document.querySelectorAll(".reveal,.reveal-stagger").forEach(el=>io.observe(el));
+
+  // --- Smooth scroll ---
+  document.querySelectorAll("a[href^='#']").forEach(a=>{
+    a.addEventListener("click",e=>{
+      const id=a.getAttribute("href");
+      if(id.length>1){const t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth",block:"start"});}}
+    });
+  });
+
+  // --- Share / Download (nav dropdown) ---
+  const shareUrl=window.location.href;
+  const navShareBtn=document.getElementById("nav-share-btn");
+  const navShareMenu=document.getElementById("nav-share-menu");
+  const wa=document.getElementById("nav-whatsapp");
+  if(wa) wa.href="https://wa.me/?text="+encodeURIComponent("Jathagam · Jothishwaran — "+shareUrl);
+
+  function closeShareMenu(){
+    navShareMenu.classList.remove("open");
+    navShareBtn.setAttribute("aria-expanded","false");
+  }
+  navShareBtn.addEventListener("click",e=>{
+    e.stopPropagation();
+    const open=navShareMenu.classList.toggle("open");
+    navShareBtn.setAttribute("aria-expanded",open?"true":"false");
+  });
+  document.addEventListener("click",e=>{
+    if(!navShareMenu.contains(e.target) && e.target!==navShareBtn && !navShareBtn.contains(e.target)) closeShareMenu();
+  });
+  document.addEventListener("keydown",e=>{if(e.key==="Escape") closeShareMenu()});
+
+  document.getElementById("nav-print").addEventListener("click",()=>{closeShareMenu();setTimeout(()=>window.print(),120)});
+  document.getElementById("nav-copy-link").addEventListener("click",async function(){
+    try{
+      await navigator.clipboard.writeText(shareUrl);
+      const lbl=this.querySelector("span");
+      const orig=lbl.textContent;
+      lbl.textContent = html.getAttribute("data-lang")==="ta" ? "நகலெடுக்கப்பட்டது!" : "Copied!";
+      setTimeout(()=>{lbl.textContent=orig;closeShareMenu()},1400);
+    }catch(e){alert(shareUrl)}
+  });
+
+  // --- Scrollspy: highlight active nav link ---
+  const navLinkMap={};
+  document.querySelectorAll(".nav-links a[href^='#']").forEach(a=>{
+    const id=a.getAttribute("href").slice(1);
+    if(id) navLinkMap[id]=a;
+  });
+  const spyTargets=Object.keys(navLinkMap).map(id=>document.getElementById(id)).filter(Boolean);
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      const link=navLinkMap[entry.target.id];
+      if(!link) return;
+      if(entry.isIntersecting){
+        Object.values(navLinkMap).forEach(a=>a.classList.remove("active"));
+        link.classList.add("active");
+      }
+    });
+  },{rootMargin:"-40% 0px -55% 0px",threshold:0});
+  spyTargets.forEach(t=>spy.observe(t));
+})();
+</script>
+
+</body>
+</html>
